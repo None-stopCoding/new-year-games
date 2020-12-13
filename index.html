@@ -8,6 +8,58 @@
     </head>
     <body class="re-body">
         <div class="re-body__content">
+            <div class="re-scene _gifts re-hidden" id="gift">
+                <video id="myaudio" loop hidden>
+                    <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
+                </video>
+                <div class="re-gift" id="gift__particles">
+                    <div class="re-gift__bg">
+                        <div class="re-gift__circle">
+                        </div>
+                        <div class="re-gift__star-lt tada-infinite animated infinite"></div>
+                        <div class="re-gift__star-lb"></div>
+                        <div class="re-gift__lt"></div>
+                        <div class="re-gift__rt"></div>
+                        <div class="re-gift__lb"></div>
+                        <div class="re-gift__rb tada-infinite animated delay-1s"></div>
+                        <canvas class="re-gift__particles" id="canvas"></canvas>
+                    </div>
+                </div>
+                <div class="re-gift re-hide" id="gift__second">
+                        <div class="re-gift__circle-center">
+                            <div class="re-gift__tree-stars-l"></div>
+                            <div class="re-gift__tree-stars-r"></div>
+                        </div>
+                        <div class="re-gift__tree"></div>
+                        <div class="re-gift__lt"></div>
+                        <div class="re-gift__rt"></div>
+                </div>
+
+                <div class="re-gift _letter re-gift__bg-blur re-hide" id="gift_letter">
+                    <div class="re-envelop re-hide" id="envelop">
+                        <div class="re-envelop__background">
+                            <div class="re-envelop__background-shadow"></div>
+                        </div>
+                        <div class="re-envelop__content">
+                            <div class="re-letter" id="letter">
+                                <div class="re-letter__wrapper _top">
+                                    <div class="re-letter__header">
+                                        <div class="re-letter__header-lt"></div>
+                                        <div class="re-letter__header-middle"></div>
+                                        <div class="re-letter__header-rt"></div>
+                                    </div>
+                                    <div class="re-letter__content" id="text">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non officia, itaque cum ratione laudantium saepe a dolorem quidem ut provident veritatis voluptatum minima aliquam asperiores impedit iste. Exercitationem, tenetur quidem.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="re-envelop__foreground">
+                            <div class="re-envelop__tries">1 из 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="re-scene _start" id="start">
                 <div class="re-scene__content _align-end">
                     <div class="re-scene__ghost">
@@ -396,8 +448,29 @@
                 </div>
             </div>
             <div class="re-scene _end re-hidden" id="end">
-                <div class="re-scene__header">Итоги</div>
-                <div class="re-scene__content"></div>
+                <div class="re-scene__content _align-end">
+                    <div class="re-scene__ghost">
+                        <img
+                            class="re-scene__ghost-image"
+                            src="./images/scene-preview/dimon.png"
+                            alt=""
+                        />
+                        <div class="re-scene__ghost-message">
+                            <div class="re-message">
+                                <div class="re-message__text">
+                                    Ну вот и все!
+                                </div>
+                                <div class="re-message__action">
+                                    <a id="end_trigger" class="re-action" href="#">
+                                        <span class="re-action__text"
+                                            >Вперед!</span
+                                        >
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

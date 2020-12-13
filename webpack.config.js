@@ -56,7 +56,8 @@ const config = {
         new CopyPlugin({
             patterns: [
                 { from: './src/fonts', to: './fonts' },
-                { from: './src/image', to: './images' }
+                { from: './src/image', to: './images' },
+                { from: './src/audio', to: './audio' }
             ],
         }),
     ],
