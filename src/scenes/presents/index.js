@@ -2,7 +2,7 @@ import fallingAnimation from "./falling";
 import runParticles from './particles';
 import _ from "lodash";
 import sceneManager from "../../SceneManager";
-sceneManager.register({ id: "present", next: null });
+sceneManager.register({ id: "gift", next: null });
 
 let fall = fallingAnimation();
 let myaudio = document.getElementById("myaudio");

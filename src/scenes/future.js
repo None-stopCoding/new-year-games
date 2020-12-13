@@ -1,16 +1,13 @@
-import * as $ from 'jquery';
-import sceneManager from '../SceneManager';
-import newGame from '../games/CrossZero';
-import { getElementById } from '../utils'
+import * as $ from "jquery";
+import sceneManager from "../SceneManager";
+import newGame from "../games/CrossZero";
+import { getElementById } from "../utils";
 
-sceneManager
-    .register({ id: 'future', next: 'end' });
+sceneManager.register({ id: "future", next: "end" });
 
-getElementById('future_trigger')
-    .addEventListener('click', initHandler);
+getElementById("future_trigger").addEventListener("click", initHandler);
 
-getElementById('future_run-next')
-    .addEventListener('click', runNextHandler);
+getElementById("future_run-next").addEventListener("click", runNextHandler);
 
 let game;
 
@@ -19,8 +16,8 @@ let game;
  */
 function stateChanged(gameState) {
     if (gameState === 2) {
-        $('#future_finish').removeClass('re-hidden');
-        $('#future_game-field').addClass('re-hidden');
+        $("#future_finish").removeClass("re-hidden");
+        $("#future_game-field").addClass("re-hidden");
     }
     // isReadyToPlay: 0,
     // inProcess: 1,
@@ -34,8 +31,8 @@ function stateChanged(gameState) {
 
 function initHandler() {
     game = newGame({ stateChanged });
-    $('#future_preview').fadeOut().delay(1000).addClass('re-hidden');
-    $('#future_game-field').removeClass('re-hidden').fadeIn();
+    $("#future_preview").fadeOut().delay(1000).addClass("re-hidden");
+    $("#future_game-field").removeClass("re-hidden").fadeIn();
 }
 
 function runNextHandler() {
