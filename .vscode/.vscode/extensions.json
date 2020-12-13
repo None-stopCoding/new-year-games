@@ -1,0 +1,31 @@
+{
+    "recommendations": [
+        "SirTori.indenticator",
+        "wayou.vscode-todo-highlight",
+        "EditorConfig.EditorConfig",
+        "emilast.LogFileHighlighter",
+        "enkia.tokyo-night",
+        "auchenberg.vscode-browser-preview",
+        "dbaeumer.vscode-eslint",
+        "enkia.tokyo-night",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "msjsdiag.debugger-for-chrome",
+        "nwhatt.chai-snippets",
+        "ritwickdey.LiveServer",
+        "spoonscen.es6-mocha-snippets",
+        "Tyriar.lorem-ipsum",
+        "WallabyJs.quokka-vscode",
+        "eamodio.gitlens",
+        "aaron-bond.better-comments",
+        "CoenraadS.bracket-pair-colorizer",
+        "dbaeumer.vscode-eslint",
+        "vscode-icons-team.vscode-icons",
+        "eamodio.gitlens",
+        "wix.vscode-import-cost",
+        "oderwat.indent-rainbow",
+        "ritwickdey.LiveServer",
+        "ionutvmi.path-autocomplete",
+        "esbenp.prettier-vscode"
+    ]
+}

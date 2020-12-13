@@ -1,0 +1,163 @@
+@require './styles/reset';
+@require './styles/fonts';
+@require './games/CrossZero/index';
+@require './games/Matches/styles';
+
+text_color_red = #d43e2c;
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.re-page
+    height: 100%;
+    overflow: hidden;
+
+.re-body
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 1170px;
+    &__header
+        font-family: 'new-year';
+        font-size: 60px;
+        text-align: center;
+        color: text_color_red;
+
+    &__content
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+.re-message
+    background: url(./image/message.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 525px;
+    min-height: 400px;
+    box-sizing: border-box;
+    padding-left: 60px;
+    padding-right: 43px;
+    padding-top: 64px;
+
+    &._past
+        background: url(./image/scene-past/message-past.png) no-repeat;
+        background-size: cover;
+        width: 400px;
+        min-height: 250px;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: -150px;
+
+    &._present
+        position: relative;
+        top: -250px;
+        left: -200px;
+
+    &._future
+        position: relative;
+        top: -250px;
+        left: -100px;
+        padding-left: 80px;
+        padding-right: 60px;
+        & ^[0]__text
+            font-size: 28px;
+
+    &__text
+        text-align: center;
+        font-size: 32px;
+
+    &__action
+        padding-top: 20px;
+        text-align: center;
+
+.re-scene
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    &._start
+        background-image: url('./image/scene-preview/bg.jpg');
+
+    &._past
+        background-image: url('./image/scene-past/bg-past.jpg');
+
+    &._present
+        background-image: url('./image/scene-present/bg-present.jpg');
+
+    &._future
+        background: url('./image/scene-future/bg-future.jpg');
+        background-size: 100% 100%;
+
+    &__header
+        width: 100%;
+        justify-content: center;
+        display: flex;
+
+    &__content
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        position: relative;
+        &._align-end
+            justify-content: flex-end;
+
+    &__ghost
+        display: flex;
+        margin-left: 10%;
+        // align-items: flex-end;
+
+        &-image
+            max-height: 500px;
+            align-self: flex-end;
+
+    &__game
+        display: flex;
+        &._matches
+            justify-content: center;
+            align-items: center;
+
+    &__game-wrapper
+        display: flex;
+        &._matches
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+
+    &__game-canvas
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+    &__action
+        display: flex;
+        justify-content: center;
+
+.re-aciton
+    &__text
+        font-family: 'playlistscript'
+        &._start-scene
+            font-size: 42px;
+
+/*! Порядок стилей имеет значение */
+@require './styles/utils';

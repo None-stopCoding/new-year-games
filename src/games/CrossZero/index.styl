@@ -1,0 +1,50 @@
+.game__board
+    width 270px
+    height 270px
+    border-collapse collapse
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+
+td
+    width 30px
+    height 30px
+    font-size 22px
+    text-align center
+    vertical-align middle
+    color white
+    border 3px solid white
+    &.x
+        background-color #abfdab
+        color black
+        background-size 5px
+    &.o
+        background-color #f99
+        color black
+    &:hover
+        background-color #ccc
+        cursor pointer
+
+tr
+    td
+        &:first-child
+            border-left-color transparent
+        &:last-child
+            border-right-color transparent
+    &:first-of-type
+        td
+            border-top-color transparent
+            &:nth-child(1)
+                border-left-color transparent
+            &:last-of-type
+                border-right-color transparent
+    &:last-of-type
+        td
+            border-bottom-color transparent
+            &:nth-child(1)
+                border-left-color transparent
+                border-bottom-color transparent
+            &:last-child
+                border-right-color transparent
+                border-bottom-color transparent
