@@ -283,6 +283,10 @@ textarea {
   font-family: 'new-year';
   src: local('new-year'), url(ccbca8667b15a0a42a97.otf);
 }
+@font-face {
+  font-family: 'flow';
+  src: local('flow'), url(94499c5f69647cfaf7c2.otf);
+}
 .game__board {
   width: 270px;
   height: 270px;
@@ -798,17 +802,19 @@ img {
 }
 .re-message {
   background: url(message.png) no-repeat;
-  background-size: 100% 100%;
+  background-size: contain;
   background-position: center;
-  width: 525px;
-  min-height: 400px;
+  width: 506px;
+  min-height: 272px;
   box-sizing: border-box;
   padding-left: 60px;
   padding-right: 43px;
   padding-top: 64px;
+  font-family: 'Flow';
+  color: #1f5578;
 }
 .re-message._past {
-  background: url(message-past.png) no-repeat;
+  background: url(message-2.png) no-repeat;
   background-size: cover;
   width: 400px;
   min-height: 250px;
