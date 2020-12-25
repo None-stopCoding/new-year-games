@@ -66,6 +66,7 @@ export default class GameLogic {
                 this.view.setWhoseMove(true);
             }, 1500);
         }
+        this.gameState = GAME_STATE.inProcess;
     }
 
     // Проверка состояния игры

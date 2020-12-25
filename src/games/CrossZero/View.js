@@ -8,12 +8,17 @@ export default class View {
         this.board = document.getElementById("game__board");
         this.metaBoard = document.getElementById("game__board-meta");
         this.board.innerHTML = '';
+        this.gameState = this.gameLogic.gameState;
     }
 
     // Обновление UI в зависимости от исхода партии
     updateUiAfterEndParty(message, alt) {
 
-        alert(message);
+        if (message === 'Ничья') {
+            this.metaBoard.textContent = 'Ну что ж, пока вы идете на равных, хочешь отыграться? Ход за тобой!';
+        } else if (message === 'Вы проиграли в партии') {
+            this.metaBoard.textContent = 'Наступющий год оказался не так то прост для тебя? Возьми реванш!';
+        }
         // swal({ title: message, icon: alert });
         this.removeEvent();
         this.addElementToHistory(this.gameLogic.board);
@@ -22,10 +27,12 @@ export default class View {
     setWhoseMove(isUser) {
         if (!isUser) {
             this.board.style.pointerEvents = 'none';
-            this.metaBoard.textContent = 'Ходит 2021!';
+            if (this.gameLogic.gameState === 1)
+                this.metaBoard.textContent = 'Ходит 2021!';
         } else {
             this.board.style.pointerEvents = 'all';
-            this.metaBoard.textContent = 'Твой ход!';
+            if (this.gameLogic.gameState === 1)
+                this.metaBoard.textContent = 'Твой ход!';
         }
     }
 
