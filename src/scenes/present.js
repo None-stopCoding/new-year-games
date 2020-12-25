@@ -11,8 +11,10 @@ getElementById('present_run-next')
     .addEventListener('click', runNextHandler);
 
 function isGameEndedCallback() {
-    $('#present_finish').removeClass('re-hidden');
-    $('#present_game-field').addClass('re-hidden');
+    setTimeout(function() {
+        $('#present_finish').removeClass('re-hidden');
+        $('#present_game-field').addClass('re-hidden');
+    }, 2000);
 }
 
 function initHandler() {

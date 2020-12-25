@@ -14,7 +14,7 @@ let game;
 /**
  *
  */
-function stateChanged(gameState) {
+function stateChanged(gameState, whoseMove) {
     if (gameState === 2) {
         $("#future_finish").removeClass("re-hidden");
         $("#future_game-field").addClass("re-hidden");
@@ -26,6 +26,12 @@ function stateChanged(gameState) {
     // isDraw: 4,
     if (gameState === 3 || gameState === 4) {
         game = newGame({ stateChanged });
+    }
+
+    if (whoseMove === 1) {
+        $("#future_game-text").textContent = 'Твой ход!';
+    } else {
+        $("#future_game-text").textContent = 'Ход за 2021!';
     }
 }
 

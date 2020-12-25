@@ -11,6 +11,10 @@ function contentLoadedHandler() {
     SceneManager.start({ initialScene: 'start' });
 }
 
+function preloaderHandler() {
+    // SceneManager.preload({ initialScene: 'start' });
+}
+
 $('[data-hide]').on('click', function($event) {
     var togglerElem = $event.target.attributes.getNamedItem('data-hide')?.value;
 
@@ -23,4 +27,6 @@ $('[data-show]').on('click', function($event) {
     $(togglerElem).fadeIn();
 });
 
-document.addEventListener('DOMContentLoaded', contentLoadedHandler);
+document.addEventListener('DOMContentLoaded', preloaderHandler);
+
+window.addEventListener('load', contentLoadedHandler);

@@ -18,14 +18,14 @@ function runScene(sceneName) {
 const manager = {
     start: ({ initialScene = 'start' }) => {
         current = initialScene;
-        const storedScene = localStorage.getItem('currentScene');
-        const scene = scenes[storedScene] || scenes[initialScene];
+        // const storedScene = localStorage.getItem('currentScene');
+        // const scene = scenes[storedScene] || scenes[initialScene];
 
-        if (scene) {
-            $(`#${scene.id}`)
-                .removeClass('re-hidden')
-                .fadeIn();
-        }
+        // if (scene) {
+        //     $(`#${scene.id}`)
+        //         .removeClass('re-hidden')
+        //         .fadeIn();
+        // }
     },
     next: (fromScene) => {
         const scene = scenes[fromScene || current];

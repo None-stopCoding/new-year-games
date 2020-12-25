@@ -295,6 +295,7 @@ textarea {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: solid 4px #fff;
 }
 td {
   width: 30px;
@@ -304,18 +305,19 @@ td {
   vertical-align: middle;
   color: #fff;
   border: 3px solid #fff;
+  background: rgba(31,209,255,0.42);
 }
 td.x {
-  background-color: #abfdab;
+  background-color: rgba(171,253,171,0.678);
   color: #000;
   background-size: 5px;
 }
 td.o {
-  background-color: #f99;
+  background-color: rgba(255,153,153,0.702);
   color: #000;
 }
 td:hover {
-  background-color: #ccc;
+  background-color: rgba(204,204,204,0.651);
   cursor: pointer;
 }
 tr td:first-child {
@@ -358,6 +360,7 @@ tr:last-of-type td:last-child {
   width: calc(25% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
+  cursor: pointer;
   position: relative;
   transition: all 0.5s;
   transform-style: preserve-3d;
@@ -376,12 +379,16 @@ tr:last-of-type td:last-child {
   height: 100%;
   padding: 20px;
   position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
   backface-visibility: hidden;
   border-radius: 5px;
-  background: #d2d2d2;
+  background: rgba(255,224,42,0.859);
 }
 .front-face {
   transform: rotateY(180deg);
+  background: rgba(255,194,42,0.91);
 }
 .re-tile {
   width: auto;
@@ -981,6 +988,13 @@ img {
 .re-game__title._past {
   color: #f5d38e;
   text-shadow: 0 0 5px #555;
+}
+.re-game__title._present {
+  color: #555;
+  text-shadow: 0 0 5px #fff;
+}
+.re-game__title._future {
+  color: #76ffff;
 }
 .re-game__field {
   flex-grow: 1;
