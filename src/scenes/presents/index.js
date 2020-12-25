@@ -19,20 +19,12 @@ export default function run() {
     myaudio.volume = 0.05;
     myaudio.play();
     runParticles();
-    secondScene.classList.remove("re-hide");
-    document
-        .getElementById("presents")
-        .addEventListener("click", function (event) {
-            let target = event.target;
-            let present = target.closest(".re-present");
 
-            if (present) {
-                const wish = wishes[_.random(0, wishes.length)];
-                // localStorage.setItem('wish', wish);
+    setTimeout(() => {
+        const wish = wishes[_.random(0, wishes.length)];
 
-                showWish(wish);
-            }
-        });
+        showWish(wish);
+    }, 4000);
 
     function showWish(wish) {
         text.textContent = wish;
