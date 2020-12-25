@@ -20,6 +20,7 @@ img {
     display: flex;
     flex-direction: column;
     min-width: 1170px;
+    font-family: 'Flow';
     &__header
         font-family: 'new-year';
         font-size: 60px;
@@ -35,7 +36,7 @@ img {
 
 .re-message
     background: url(./image/message.png) no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     background-position: center;
     width: 506px;
     min-height: 272px;
@@ -43,8 +44,17 @@ img {
     padding-left: 60px;
     padding-right: 43px;
     padding-top: 64px;
+    padding-bottom: 60px;
     font-family: 'Flow';
     color: #1f5578;
+
+    &._start
+        margin-top: -150px;
+        margin-left: -150px;
+        padding-top: 30px;
+        padding-left: 29px;
+        padding-right: 29px;
+
     &._past
         background: url(./image/message-2.png) no-repeat;
         background-size: cover;
@@ -55,6 +65,7 @@ img {
         justify-content: center;
         flex-direction: column;
         margin-top: -150px;
+        margin-left: -150px;
 
     &._present
         position: relative;
@@ -91,17 +102,17 @@ img {
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
-    &._start
-        background-image: url('./image/scene-preview/bg.jpg');
+    // &._start
+    //     background-image: url('./image/scene-preview/bg.jpg');
 
     &._past
-        background-image: url('./image/scene-past/bg-past.jpg');
+        background-image: url('./image/past.png');
 
     &._present
-        background-image: url('./image/scene-present/bg-present.jpg');
+        background-image: url('./image/present.png');
 
     &._future
-        background: url('./image/scene-future/bg-future.jpg');
+        background: url('./image/future.png');
         background-size: 100% 100%;
 
     &__header
@@ -123,7 +134,7 @@ img {
         // align-items: flex-end;
 
         &-image
-            max-height: 500px;
+            max-height: 600px;
             align-self: flex-end;
 
     &__game
@@ -161,5 +172,22 @@ img {
         &._start-scene
             font-size: 42px;
 
+.re-game
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+
+    &__title
+        padding: 40px;
+        text-align: center;
+        font-size: 42px;
+        color: #fff;
+
+    &__field
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 /*! Порядок стилей имеет значение */
 @require './styles/utils';

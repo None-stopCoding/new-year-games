@@ -110,6 +110,11 @@
 
 .re-gift__content
     margin-top 100px
+    display: flex;
+
+.re-gift__content-wrapper
+    display: flex;
+    flex-direction: column;
 
 .re-gift__bg
     position absolute
@@ -121,10 +126,12 @@
     background-color #fef6e1
     z-index -1
 
-.re-gift__title
+.re-gift__text
     text-align center
     pointer-events none
     height 220px
+    font-weight: bold;
+    max-width 550px;
     position relative
 
 .re-gift__circle
@@ -148,6 +155,23 @@
     bottom 0
     left 0
     right 0
+
+.re-gift__action
+    background: url(./action.png) -35px center no-repeat;
+    background-size: cover;
+    width: 626px;
+    height: 318px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'playlistscript';
+    font-size: 68px;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    user-select: none;
 
 .re-gift__circle-center
     max-height 100%
@@ -265,7 +289,9 @@
     &._color-red
         color #d43e2c
     &._size-m
-        font-size 110px
+        font-size: 110px
+    &._size-tiny
+        font-size: 32px;
 
 .re-envelop-wrapper
     left 0

@@ -15,9 +15,17 @@ function runScene(sceneName) {
         .fadeOut();
 }
 
-export default {
+const manager = {
     start: ({ initialScene = 'start' }) => {
         current = initialScene;
+        const storedScene = localStorage.getItem('currentScene');
+        const scene = scenes[storedScene] || scenes[initialScene];
+
+        if (scene) {
+            $(`#${scene.id}`)
+                .removeClass('re-hidden')
+                .fadeIn();
+        }
     },
     next: (fromScene) => {
         const scene = scenes[fromScene || current];
@@ -25,7 +33,10 @@ export default {
         if (scene.next) {
             runScene(scene.id);
         }
+
+        localStorage.setItem('currentScene', scene.id);
     },
+
     register: ({id, next}) => {
         scenes[id] = {
             id,
@@ -33,3 +44,5 @@ export default {
         };
     }
 }
+
+export default manager;

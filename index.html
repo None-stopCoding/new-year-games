@@ -8,7 +8,7 @@
     </head>
     <body class="re-body">
         <div class="re-body__content">
-            <div class="re-scene _gifts re-hidden" id="gift">
+            <!-- <div class="re-scene _gifts re-hidden" id="gift">
                 <video id="myaudio" loop hidden>
                     <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
                 </video>
@@ -54,13 +54,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="re-envelop__foreground">
-                            <div class="re-envelop__tries">1 из 3</div>
-                        </div>
                     </div>
                 </div>
+            </div> -->
+            <div class="re-scene _start re-hidden" id="start">
+                <div class="re-gift" id="gift__particles">
+                    <div class="re-gift__bg">
+                        <div class="re-gift__star-lt tada-infinite animated infinite"></div>
+                        <div class="re-gift__star-lb"></div>
+                        <div class="re-gift__lt"></div>
+                        <div class="re-gift__rt"></div>
+                        <div class="re-gift__lb"></div>
+                        <div class="re-gift__rb tada-infinite animated delay-1s"></div>
+                        <canvas class="re-gift__particles" id="canvas"></canvas>
+                    </div>
+                </div>
+                <div class="re-gift" id="gift__second">
+                    <div class="re-gift__content" style="margin-right: 180px;">
+                        <div class="re-gift__preview-person" style="margin-right: 80px;">
+                            <img class="re-scene__ghost-image" src="./images/scene-preview/dimon.png" alt="">
+                        </div>
+                        <div class="re-gift__content-wrapper">
+                            <div class="re-gift__text">
+                                <div class="re-title _size-tiny _color-red">
+                                    Привет!<br/>
+                                    Накануне Нового года даже самые отъявленные скептики начинают вдруг верить в чудеса!<br/>
+                                    Под бой курантов вспоминают прошлое, подводят итоги настоящего и всей душой верят в счастливое будущее.<br/>
+                                    Хочешь узнать, что ждет тебя в 2021?<br/>
+                                    Пройди испытание и получи предсказание!
+                                </div>
+                            </div>
+                            <div class="re-gift__action" id="init">
+                                Вжух!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="re-gift__lt"></div>
+                    <div class="re-gift__rt"></div>
+                </div>
             </div>
-            <div class="re-scene _start" id="start">
+            <!-- <div class="re-scene _start re-hidden" id="start">
                 <div class="re-scene__content _align-end">
                     <div class="re-scene__ghost">
                         <img
@@ -69,14 +102,17 @@
                             alt=""
                         />
                         <div class="re-scene__ghost-message">
-                            <div class="re-message">
-                                <div class="re-message__text">
-                                    Привет! Дайвай пройдем испытания.
+                            <div class="re-message _start">
+                                <div class="re-message__text" style="font-size: 24px;">
+                                    Привет! Накануне Нового года даже самые отъявленные скептики начинают вдруг верить в чудеса!
+                                    Под бой курантов вспоминают прошлое, подводят итоги настоящего и всей душой верят в счастливое будущее.
+                                    Хочешь узнать, что ждет тебя в 2021?
+                                    Пройди испытание и получи предсказание!
                                 </div>
                                 <div class="re-message__action">
                                     <a id="init" class="re-action" href="#">
                                         <span class="re-action__text"
-                                            >Вперед!</span
+                                            >Вжух!</span
                                         >
                                     </a>
                                 </div>
@@ -84,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="re-scene _past re-hidden" id="past">
                 <div class="re-scene__content _align-end">
                     <div class="re-scene__content-wrapper" id="past_preview">
@@ -97,7 +133,7 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _past">
                                     <div class="re-message__text">
-                                        Твое первое испытание ждет тебя!
+                                        Ну что, готов к путешествию в прошлое?
                                     </div>
                                     <div class="re-message__action">
                                         <a
@@ -105,9 +141,7 @@
                                             class="re-action"
                                             href="#"
                                         >
-                                            <span class="re-action__text"
-                                                >Хочу пройти!</span
-                                            >
+                                            <span class="re-action__text">Вжух!</span>
                                         </a>
                                     </div>
                                 </div>
@@ -119,9 +153,16 @@
                         id="past_game-field"
                     >
                         <div class="re-scene__game-canvas">
-                            <canvas class="" id="pazzle-game"></canvas>
-                            &nbsp;
-                            <img id="pazzle-result" src="" alt="" />
+                            <div class="re-game">
+                                <div class="re-game__title">
+                                    Какой то заголовок!
+                                </div>
+                                <div class="re-game__field">
+                                    <canvas class="" id="pazzle-game"></canvas>
+                                    &nbsp;
+                                    <img id="pazzle-result" src="" alt="" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div
@@ -409,7 +450,14 @@
                         id="future_game-field"
                     >
                         <div class="re-scene__game-canvas">
-                            <table id="game__board" class="game__board"></table>
+                            <div class="re-game">
+                                <div class="re-game__title">
+                                    Крестики нолики!
+                                </div>
+                                <div class="re-game__field">
+                                    <table id="game__board" class="game__board"></table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div

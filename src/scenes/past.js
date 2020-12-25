@@ -20,8 +20,10 @@ getElementById("past_run-next").addEventListener("click", runNextHandler);
  */
 function stateChanged(isEnd) {
     // if (isEnd) {
+    setTimeout(function() {
         $("#past_finish").removeClass("re-hidden");
         $("#past_game-field").addClass("re-hidden");
+    }, 2000);
     // }
 }
 
