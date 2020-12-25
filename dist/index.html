@@ -133,7 +133,7 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _past">
                                     <div class="re-message__text">
-                                        Ну что, готов к путешествию в прошлое?
+                                        Ну что,<br/> готов к путешествию в прошлое?
                                     </div>
                                     <div class="re-message__action">
                                         <a
@@ -154,13 +154,30 @@
                     >
                         <div class="re-scene__game-canvas">
                             <div class="re-game">
-                                <div class="re-game__title">
-                                    Какой то заголовок!
+                                <div class="re-game__title _past">
+                                    Как звали кошку соседки тети Маши?
+                                    На что так быстро ушла первая стипендия?
+                                    Какой была жизнь до телефонии?
+                                    Со временем отрывки прошлого сливаются в неясные картинки.
+                                    Сможешь навести порядок в памяти?
                                 </div>
                                 <div class="re-game__field">
-                                    <canvas class="" id="pazzle-game"></canvas>
-                                    &nbsp;
-                                    <img id="pazzle-result" src="" alt="" />
+                                    <div class="re-game__field-main" id="pazzle-game-field">
+                                        <div class="re-game__toggler _right">
+                                            <div class="re-toggler _hint" id="past-game-toggler" data-hide="#pazzle-game-field" data-show="#pazzle-hint">
+                                                Ну че началось то... Дай подсказку!
+                                            </div>
+                                        </div>
+                                        <canvas class="" id="pazzle-game"></canvas>
+                                    </div>
+                                    <div class="re-game__hint _hint" style="display: none;" id="pazzle-hint">
+                                        <div class="re-game__toggler _right">
+                                            <div class="re-toggler" data-hide="#pazzle-hint" data-show="#pazzle-game-field">
+                                                Все понятно, верни обратно!
+                                            </div>
+                                        </div>
+                                        <img id="pazzle-result" src="" alt="" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -178,8 +195,11 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _past">
                                     <div class="re-message__text">
-                                        Ты прошел испытание! Готов(а) к
-                                        следующему?
+                                        Как звали кошку соседки тети Маши?
+                                        На что так быстро ушла первая стипендия?
+                                        Какой была жизнь до телефонии?
+                                        Со временем отрывки прошлого сливаются в неясные картинки.
+                                        Сможешь навести порядок в памяти?
                                     </div>
                                     <div class="re-message__action">
                                         <a

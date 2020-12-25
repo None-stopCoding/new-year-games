@@ -854,7 +854,7 @@ img {
   background-size: cover;
   width: 400px;
   min-height: 250px;
-  padding: 30px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -978,11 +978,38 @@ img {
   font-size: 42px;
   color: #fff;
 }
+.re-game__title._past {
+  color: #f5d38e;
+  text-shadow: 0 0 5px #555;
+}
 .re-game__field {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.re-game__field-main {
+  position: relative;
+}
+.re-game__toggler {
+  margin-bottom: 10px;
+}
+.re-game__toggler._right {
+  text-align: right;
+}
+.re-game__hint {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+.re-toggler {
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 0 5px #000;
 }
 /* Порядок стилей имеет значение */
 .re-hidden {

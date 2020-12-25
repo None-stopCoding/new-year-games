@@ -65,7 +65,7 @@ function initPuzzle() {
         mainWidth,
         mainHeight
     );
-    if (!gamesCount) createTitle("Click me to start!");
+    if (!gamesCount) createTitle("Запускай!");
     buildPieces();
 }
 
@@ -97,7 +97,7 @@ function buildPieces() {
             yPos += pieceHeight;
         }
     }
-    document.onmousedown = shufflePuzzle;
+    canvas.onmousedown = shufflePuzzle;
 }
 
 function shufflePuzzle() {
@@ -129,7 +129,7 @@ function shufflePuzzle() {
             yPos += pieceHeight;
         }
     }
-    document.onmousedown = onPuzzleClick;
+    canvas.onmousedown = onPuzzleClick;
 }
 
 function onPuzzleClick(e) {
@@ -162,8 +162,8 @@ function onPuzzleClick(e) {
             pieceHeight
         );
         ctx.restore();
-        document.onmousemove = updatePuzzle;
-        document.onmouseup = pieceDropped;
+        canvas.onmousemove = updatePuzzle;
+        canvas.onmouseup = pieceDropped;
     }
 }
 
@@ -255,8 +255,8 @@ function updatePuzzle(e) {
 }
 
 function pieceDropped(e) {
-    document.onmousemove = null;
-    document.onmouseup = null;
+    canvas.onmousemove = null;
+    canvas.onmouseup = null;
     if (currentDroppedPiece != null) {
         var tmp = { xPos: currentPiece.xPos, yPos: currentPiece.yPos };
         currentPiece.xPos = currentDroppedPiece.xPos;
@@ -296,9 +296,9 @@ function resetPuzzleAndCheckWin() {
 }
 
 function gameOver() {
-    document.onmousedown = null;
-    document.onmousemove = null;
-    document.onmouseup = null;
+    canvas.onmousedown = null;
+    canvas.onmousemove = null;
+    canvas.onmouseup = null;
     gamesCount++;
     initPuzzle();
     if (maxCount == 0) maxCount = count;

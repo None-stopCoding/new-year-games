@@ -60,7 +60,7 @@ img {
         background-size: cover;
         width: 400px;
         min-height: 250px;
-        padding: 30px;
+        padding: 15px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -183,11 +183,35 @@ img {
         text-align: center;
         font-size: 42px;
         color: #fff;
+        &._past
+            color: #f5d38e;
+            text-shadow: 0 0 5px #555;
 
     &__field
         flex-grow: 1;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        &-main
+            position: relative;
+
+    &__toggler
+        margin-bottom: 10px;
+        &._right
+            text-align: right;
+
+    &__hint
+        position: absolute;
+        margin: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+
+.re-toggler
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 0 0 5px #000;
 /*! Порядок стилей имеет значение */
 @require './styles/utils';
