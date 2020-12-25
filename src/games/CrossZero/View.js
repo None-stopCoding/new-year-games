@@ -6,6 +6,7 @@ export default class View {
 
         // Инициализация нужных HTML элементов
         this.board = document.getElementById("game__board");
+        this.metaBoard = document.getElementById("game__board-meta");
         this.board.innerHTML = '';
     }
 
@@ -16,6 +17,16 @@ export default class View {
         // swal({ title: message, icon: alert });
         this.removeEvent();
         this.addElementToHistory(this.gameLogic.board);
+    }
+
+    setWhoseMove(isUser) {
+        if (!isUser) {
+            this.board.style.pointerEvents = 'none';
+            this.metaBoard.textContent = 'Ходит 2021!';
+        } else {
+            this.board.style.pointerEvents = 'all';
+            this.metaBoard.textContent = 'Твой ход!';
+        }
     }
 
     // Добавление нового элемента в историю игр

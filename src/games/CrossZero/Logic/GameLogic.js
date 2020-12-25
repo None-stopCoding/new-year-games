@@ -49,16 +49,22 @@ export default class GameLogic {
             );
             //Проверка исхода партии
             if (this.checkGameState(this.humanPlayer) !== undefined) {
+                this.view.setWhoseMove(true);
                 return;
             }
-            // Ходим компьютером и проверяем повлиял ли его ход на исход партии
-            this.computer.step(
-                this.gameModel,
-                this.checkWin,
-                this.humanPlayer,
-                this.view
-            );
-            this.checkGameState(this.computer);
+
+            this.view.setWhoseMove(false);
+            setTimeout(() => {
+                // Ходим компьютером и проверяем повлиял ли его ход на исход партии
+                this.computer.step(
+                    this.gameModel,
+                    this.checkWin,
+                    this.humanPlayer,
+                    this.view
+                );
+                this.checkGameState(this.computer);
+                this.view.setWhoseMove(true);
+            }, 1500);
         }
     }
 

@@ -995,6 +995,7 @@ img {
 }
 .re-game__title._future {
   color: #76ffff;
+  text-shadow: 0 0 5px rgba(90,188,188,0.71);
 }
 .re-game__field {
   flex-grow: 1;
@@ -1005,6 +1006,9 @@ img {
 }
 .re-game__field-main {
   position: relative;
+}
+.re-game__field._column-direction {
+  flex-direction: column;
 }
 .re-game__toggler {
   margin-bottom: 10px;
@@ -1019,6 +1023,13 @@ img {
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
+}
+.re-game__meta-board {
+  color: #fff;
+  margin-top: 40px;
+  background: rgba(31,209,255,0.42);
+  padding: 30px;
+  font-size: 32px;
 }
 .re-toggler {
   color: #fff;

@@ -191,6 +191,8 @@ img {
             text-shadow: 0 0 5px #fff;
         &._future
             color: #76ffff;
+            text-shadow: 0 0 5px #5abcbcb5;
+
 
     &__field
         flex-grow: 1;
@@ -200,7 +202,8 @@ img {
         position: relative;
         &-main
             position: relative;
-
+        &._column-direction
+            flex-direction: column
     &__toggler
         margin-bottom: 10px;
         &._right
@@ -213,6 +216,13 @@ img {
         align-items: flex-end;
         justify-content: center;
         flex-direction: column;
+
+    &__meta-board
+        color: #fff;
+        margin-top: 40px;
+        background: rgba(31,209,255,0.42);
+        padding: 30px;
+        font-size: 32px;
 
 .re-toggler
     color: #fff;
