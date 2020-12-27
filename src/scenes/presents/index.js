@@ -21,8 +21,11 @@ export default function run() {
     runParticles();
 
     setTimeout(() => {
-        const wish = wishes[_.random(0, wishes.length)];
-
+        let wish = localStorage.getItem('wish');
+        if (!wish) {
+            wish = wishes[_.random(0, wishes.length)];
+            localStorage.setItem('wish', wish);
+        }
         showWish(wish);
     }, 4000);
 

@@ -28,6 +28,10 @@ const manager = {
 
         const storedScene = localStorage.getItem("currentScene");
         const scene = scenes[storedScene] || scenes[initialScene];
+
+        if (scene) {
+            scenes.preload.next = scene.id;
+        }
     },
     next: (fromScene) => {
         const scene = scenes[fromScene || current];
