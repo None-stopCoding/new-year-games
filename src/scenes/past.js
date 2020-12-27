@@ -1,12 +1,12 @@
 import * as $ from "jquery";
 import sceneManager from "../SceneManager";
 import { init } from "../games/Pazzle";
-import { getElementById } from "../utils";
+import { getElementById, getRandomInt } from "../utils";
 
 sceneManager.register({ id: "past", next: "present" });
 
 init({
-    imagePath: "./images/scene-past/pazzle-2.jpg",
+    imagePath: `./images/scene-past/p-${getRandomInt(1, 6)}.jpg`,
     el: "pazzle-game",
     stateChangedCallback: stateChanged,
 });

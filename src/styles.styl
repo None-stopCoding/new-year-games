@@ -57,6 +57,15 @@ img {
         width: auto;
         min-height: auto;
         border-radius: 10px;
+        &._blue
+            background: #1a2147ab;
+            color: #fff;
+        &._orange
+            background: #e49700b8;
+            color: #fff;
+        &._aqua
+            background: #1d8fceab;
+            color: #fff;
         & ^[0]__text
             text-align: left;
             font-size: 24px;
@@ -69,15 +78,13 @@ img {
         padding-right: 29px;
 
     &._past
-        background: url(./image/message-2.png) no-repeat;
         background-size: cover;
         width: 400px;
-        min-height: 250px;
         padding: 15px;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        margin-top: -150px;
+        margin-top: -50px;
         margin-left: -150px;
 
     &._present
@@ -87,12 +94,15 @@ img {
 
     &._future
         position: relative;
-        top: -250px;
-        left: -100px;
-        padding-left: 80px;
-        padding-right: 60px;
+        top: -100px;
+        left: -250px;
         & ^[0]__text
             font-size: 28px;
+
+    &._end
+        position: relative;
+        left: -250px;
+        top: -200px;
 
     &__text
         text-align: center;
@@ -200,7 +210,7 @@ img {
         font-size: 42px;
         color: #fff;
         &._past
-            color: #f5d38e;
+            color: #2c93d4;
             text-shadow: 0 0 5px #555;
         &._present
             color: #0026ffab;
@@ -249,8 +259,8 @@ img {
                 -4px  4px 0   #FFFFFF,
                 4px  4px 0   #FFFFFF;
         &._future
-            color: #76ffff;
-            text-shadow: 0 0 5px #5abcbcb5;
+            color: #fdfff6ba;
+            text-shadow: 0 0 5px rgb(41 141 141 / 71%);
 
 
     &__field

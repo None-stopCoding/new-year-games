@@ -44,7 +44,7 @@ function setCanvas() {
     ctx = canvas.getContext("2d");
     canvas.width = mainWidth;
     canvas.height = mainHeight;
-    canvas.style.border = "1px solid blue";
+    canvas.style.border = "3px solid #091c25";
     offsetLeft = canvas.offsetLeft;
     offsetTop = canvas.offsetTop;
 }
@@ -70,7 +70,7 @@ function initPuzzle() {
 }
 
 function createTitle(msg) {
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "rgba(107, 107, 240, 0.6)";
     ctx.globalAlpha = 0.5;
     ctx.fillRect(100, mainHeight - 40, mainWidth - 200, 40);
     ctx.fillStyle = "#FFFFFF";
