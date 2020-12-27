@@ -320,6 +320,26 @@ td:hover {
   background-color: rgba(204,204,204,0.651);
   cursor: pointer;
 }
+.re-x,
+.re-o {
+  font-size: 124px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #fff;
+}
+tr td {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
 tr td:first-child {
   border-left-color: transparent;
 }
@@ -388,7 +408,7 @@ tr:last-of-type td:last-child {
 }
 .front-face {
   transform: rotateY(180deg);
-  background: rgba(255,194,42,0.91);
+  background: rgba(186,209,255,0.91);
 }
 .re-spinner {
   height: 2em;
@@ -1005,7 +1025,7 @@ img {
 }
 .re-message__action {
   padding-top: 20px;
-  text-align: center;
+  text-align: right;
 }
 .re-scene {
   height: 100%;
@@ -1087,10 +1107,16 @@ img {
   display: flex;
   justify-content: center;
 }
-.re-aciton__text {
-  font-family: 'playlistscript';
+.re-action {
+  color: #fff;
 }
-.re-aciton__text._start-scene {
+.re-action__text {
+  color: #fff;
+}
+.re-action__text._blue {
+  color: #1f5578;
+}
+.re-action__text._start-scene {
   font-size: 42px;
 }
 .re-game {

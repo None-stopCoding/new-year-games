@@ -9,9 +9,14 @@ import './styles.styl';
 
 SceneManager.register({ id: "preload", next: "start" });
 
+let audio = new Audio("./audio/vzhuh.mp3");
+audio.volume = 0.2;
+
 function contentLoadedHandler() {
-    SceneManager.start({initialScene: 'preload'})
-    SceneManager.next();
+    SceneManager.start({initialScene: 'preload'});
+    setTimeout(function() {
+        SceneManager.next();
+    }, 500);
 }
 
 function preloaderHandler() {
@@ -22,6 +27,10 @@ $('[data-hide]').on('click', function($event) {
     var togglerElem = $event.target.attributes.getNamedItem('data-hide')?.value;
 
     $(togglerElem).fadeOut();
+});
+
+$('[data-vzhuh]').on('click', function() {
+    audio.play();
 });
 
 $('[data-show]').on('click', function($event) {

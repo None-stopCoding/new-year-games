@@ -84,7 +84,7 @@ export default class View {
 
     // Занятие ячейки игрового поля
     occupationCell(x, y, icon) {
-        this.board.rows[x].cells[y].innerText = icon;
+        this.board.rows[x].cells[y].innerHTML = `<div class="re-${icon}">${icon}</div>`;
         this.board.rows[x].cells[y].classList.add(icon);
     }
 }

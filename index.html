@@ -11,8 +11,6 @@
             <div class="re-scene _preloader" id="preload">
                 <div class="re-gift">
                     <div class="re-gift__bg">
-                        <div class="re-gift__circle">
-                        </div>
                         <div class="re-gift__star-lt tada-infinite animated infinite"></div>
                         <div class="re-gift__star-lb"></div>
                         <div class="re-gift__lt"></div>
@@ -23,6 +21,9 @@
                 </div>
                 <div class="re-spinner"></div>
             </div>
+            <video id="vzhuh" loop hidden>
+                <source src="./audio/vzhuh.mp3" type="audio/mp3">
+            </video>
             <div class="re-scene _gifts re-hidden" id="gift">
                 <video id="myaudio" loop hidden>
                     <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
@@ -101,7 +102,7 @@
                                     Пройди испытание и получи предсказание!
                                 </div>
                             </div>
-                            <div class="re-gift__action" id="init">
+                            <div data-vzhuh class="re-gift__action" id="init">
                                 Вжух!
                             </div>
                         </div>
@@ -158,7 +159,7 @@
                                             class="re-action"
                                             href="#"
                                         >
-                                            <span class="re-action__text">Вжух!</span>
+                                            <span data-vzhuh class="re-action__text">Вжух!</span>
                                         </a>
                                     </div>
                                 </div>
@@ -255,7 +256,7 @@
                                             class="re-action"
                                             href="#"
                                         >
-                                            <span class="re-action__text"
+                                            <span data-vzhuh class="re-action__text"
                                                 >Вжух!</span
                                             >
                                         </a>
@@ -273,11 +274,12 @@
                                 <div class="re-game__field">
                                     <section class="memory-game">
                                         <div class="memory-card" data-name="react">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/react.svg"
-                                                alt="React"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/studious2.png"
+                                                    alt="React"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -288,11 +290,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="react">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/react.svg"
-                                                alt="React"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/studious2.png"
+                                                    alt="React"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -303,11 +306,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="angular">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/angular.svg"
-                                                alt="Angular"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/champion.png"
+                                                    alt="Angular"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -318,11 +322,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="angular">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/angular.svg"
-                                                alt="Angular"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/champion.png"
+                                                    alt="Angular"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -333,11 +338,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="ember">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/ember.svg"
-                                                alt="Ember"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/ambitious.png"
+                                                    alt="Ember"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -348,11 +354,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="ember">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/ember.svg"
-                                                alt="Ember"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/ambitious.png"
+                                                    alt="Ember"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -363,11 +370,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="vue">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/vue.svg"
-                                                alt="Vue"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/11_knight.png"
+                                                    alt="Vue"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -378,11 +386,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="vue">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/vue.svg"
-                                                alt="Vue"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/11_knight.png"
+                                                    alt="Vue"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -393,11 +402,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="backbone">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/backbone.svg"
-                                                alt="Backbone"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/fast6.png"
+                                                    alt="Backbone"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -408,11 +418,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="backbone">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/backbone.svg"
-                                                alt="Backbone"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/fast6.png"
+                                                    alt="Backbone"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -423,11 +434,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="aurelia">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/aurelia.svg"
-                                                alt="Aurelia"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/superman2.png"
+                                                    alt="Aurelia"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -438,11 +450,12 @@
                                         </div>
 
                                         <div class="memory-card" data-name="aurelia">
-                                            <img
-                                                class="front-face"
-                                                src="./images/scene-present/aurelia.svg"
-                                                alt="Aurelia"
-                                            />
+                                            <div class="front-face">
+                                                <img
+                                                    src="./images/scene-present/superman2.png"
+                                                    alt="Aurelia"
+                                                />
+                                            </div>
                                             <div class="back-face">
                                                 <img
                                                     class="back-face-img"
@@ -473,7 +486,7 @@
                                             class="re-action"
                                             href="#"
                                         >
-                                            <span class="re-action__text">Вжух!</span>
+                                            <span data-vzhuh class="re-action__text">Вжух!</span>
                                         </a>
                                     </div>
                                 </div>
@@ -502,7 +515,7 @@
                                             class="re-action"
                                             href="#"
                                         >
-                                            <span class="re-action__text">Вжух!</span
+                                            <span data-vzhuh class="re-action__text">Вжух!</span
                                             >
                                         </a>
                                     </div>
@@ -588,7 +601,7 @@
                                 </div>
                                 <div class="re-message__action">
                                     <a id="end_trigger" class="re-action" href="#">
-                                        <span class="re-action__text"
+                                        <span data-vzhuh class="re-action__text _blue"
                                             >Вжух!</span
                                         >
                                     </a>
