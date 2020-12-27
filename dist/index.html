@@ -8,6 +8,21 @@
     <link rel="icon" href="favicon.png"><link href="main.css" rel="stylesheet"></head>
     <body class="re-body">
         <div class="re-body__content">
+            <div class="re-scene _preloader" id="preload">
+                <div class="re-gift">
+                    <div class="re-gift__bg">
+                        <div class="re-gift__circle">
+                        </div>
+                        <div class="re-gift__star-lt tada-infinite animated infinite"></div>
+                        <div class="re-gift__star-lb"></div>
+                        <div class="re-gift__lt"></div>
+                        <div class="re-gift__rt"></div>
+                        <div class="re-gift__lb"></div>
+                        <div class="re-gift__rb tada-infinite animated delay-1s"></div>
+                    </div>
+                </div>
+                <div class="re-spinner"></div>
+            </div>
             <div class="re-scene _gifts re-hidden" id="gift">
                 <video id="myaudio" loop hidden>
                     <source src="./audio/bobby_helms-jingle_bells_rock.mp3" type="audio/mp3">
@@ -57,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="re-scene _start" id="start">
+            <div class="re-scene _start re-hidden" id="start">
                 <div class="re-gift" id="gift__particles">
                     <div class="re-gift__bg">
                         <div class="re-gift__star-lt tada-infinite animated infinite"></div>

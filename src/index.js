@@ -7,8 +7,11 @@ import future from './scenes/future';
 import end from './scenes/end';
 import './styles.styl';
 
+SceneManager.register({ id: "preload", next: "start" });
+
 function contentLoadedHandler() {
-    SceneManager.start({ initialScene: 'start' });
+    SceneManager.start({initialScene: 'preload'})
+    SceneManager.next();
 }
 
 function preloaderHandler() {

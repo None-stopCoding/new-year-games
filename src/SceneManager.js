@@ -1,23 +1,26 @@
-import * as $ from 'jquery';
+import * as $ from "jquery";
 
-const scenes = {};
+const scenes = {
+    start: {
+        id: "start",
+        next: "past",
+    },
+};
 let current = null;
 
 function runScene(sceneName) {
     const currentScene = scenes[sceneName];
     current = currentScene.next;
 
-    $(`#${currentScene.next}`)
-        .removeClass('re-hidden')
-        .fadeIn();
+    $(`#${currentScene.next}`).removeClass("re-hidden").fadeIn();
 
-    $(`#${currentScene.id}`)
-        .fadeOut();
+    $(`#${currentScene.id}`).fadeOut();
 }
 
 const manager = {
-    start: ({ initialScene = 'start' }) => {
+    start: ({ initialScene = "start" }) => {
         current = initialScene;
+
         // const storedScene = localStorage.getItem('currentScene');
         // const scene = scenes[storedScene] || scenes[initialScene];
 
@@ -34,15 +37,15 @@ const manager = {
             runScene(scene.id);
         }
 
-        localStorage.setItem('currentScene', scene.id);
+        localStorage.setItem("currentScene", scene.id);
     },
 
-    register: ({id, next}) => {
+    register: ({ id, next }) => {
         scenes[id] = {
             id,
-            next
+            next,
         };
-    }
-}
+    },
+};
 
 export default manager;
