@@ -12,7 +12,10 @@ function runScene(sceneName) {
     const currentScene = scenes[sceneName];
     current = currentScene.next;
 
-    $(`#${currentScene.next}`).removeClass("re-hidden").fadeIn();
+    $(`#${currentScene.next}`)
+        .css("display", "none")
+        .removeClass("re-hide")
+        .fadeIn();
 
     $(`#${currentScene.id}`).fadeOut();
 
@@ -23,14 +26,8 @@ const manager = {
     start: ({ initialScene = "start" }) => {
         current = initialScene;
 
-        const storedScene = localStorage.getItem('currentScene');
+        const storedScene = localStorage.getItem("currentScene");
         const scene = scenes[storedScene] || scenes[initialScene];
-
-        if (scene) {
-            $(`#${scene.id}`)
-                .removeClass('re-hidden')
-                .fadeIn();
-        }
     },
     next: (fromScene) => {
         const scene = scenes[fromScene || current];

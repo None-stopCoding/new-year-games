@@ -12,14 +12,23 @@ SceneManager.register({ id: "preload", next: "start" });
 let audio = new Audio("./audio/vzhuh.mp3");
 audio.volume = 0.2;
 
+SceneManager.start({initialScene: 'preload'});
+
 function contentLoadedHandler() {
-    SceneManager.start({initialScene: 'preload'});
     setTimeout(function() {
         SceneManager.next();
     }, 500);
 }
 
 function preloaderHandler() {
+    [
+        './past.png',
+        './present.png',
+        './future.png'
+    ].forEach((path) => {
+        const img = new Image();
+        img.src = path;
+    })
     // SceneManager.preload({ initialScene: 'start' });
 }
 
