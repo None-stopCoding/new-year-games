@@ -10,6 +10,9 @@ const GAME_STATE = {
     isDraw: 4,
 }
 
+const audio = new Audio();
+audio.volume = 0.1;
+
 // Класс с игровой логикой: ралзичные проверки/ходы игровых сущностей
 export default class GameLogic {
 
@@ -47,6 +50,8 @@ export default class GameLogic {
                 this.view,
                 this.gameModel
             );
+            audio.src = './audio/click.mp3';
+            audio.play();
             //Проверка исхода партии
             if (this.checkGameState(this.humanPlayer) !== undefined) {
                 this.view.setWhoseMove(true);

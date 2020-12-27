@@ -15,6 +15,7 @@ let ctx,
     offsetLeft = 0,
     offsetTop = 0,
     mouse,
+    audio = new Audio(),
     stateChanged = null;
 let count = 0,
     maxCount = 0,
@@ -101,6 +102,8 @@ function buildPieces() {
 }
 
 function shufflePuzzle() {
+    audio.src = './audio/thk.mp3';
+    audio.play();
     pieces = shuffleArray(pieces);
     ctx.clearRect(0, 0, mainWidth, mainHeight);
     var i,
@@ -133,6 +136,8 @@ function shufflePuzzle() {
 }
 
 function onPuzzleClick(e) {
+    audio.src = './audio/click.mp3';
+    audio.play();
     if (e.layerX || e.layerX == 0) {
         mouse.x = e.layerX;
         mouse.y = e.layerY;
@@ -255,6 +260,8 @@ function updatePuzzle(e) {
 }
 
 function pieceDropped(e) {
+    audio.src = './audio/thk.mp3';
+    audio.play();
     canvas.onmousemove = null;
     canvas.onmouseup = null;
     if (currentDroppedPiece != null) {

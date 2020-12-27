@@ -6,8 +6,12 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let stateChanged = null;
+var audio = new Audio();
 
 function flipCard() {
+    audio.src = './audio/click.mp3';
+    audio.volume = 0.1;
+    audio.play();
     if (lockBoard) return;
     if (this === firstCard) return;
 

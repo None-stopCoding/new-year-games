@@ -39,6 +39,13 @@ $('[data-hide]').on('click', function($event) {
 });
 
 $('[data-vzhuh]').on('click', function() {
+    audio.src = './audio/vzhuh.mp3';
+    audio.play();
+});
+
+
+$('[data-ups]').on('click', function() {
+    audio.src = './audio/ups.mp3';
     audio.play();
 });
 
