@@ -40,6 +40,7 @@ export default function run() {
             envelop.classList.add("tada");
             setTimeout(() => {
                 letter.style.transform = "translateY(0)";
+                localStorage.setItem('currentScene', 'end');
             }, 1500);
         }, 1500);
     }

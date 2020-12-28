@@ -47,6 +47,10 @@ const manager = {
             next,
         };
     },
+
+    getCurrentScene() {
+        return current !== 'preload' ? current : localStorage.getItem("currentScene");
+    }
 };
 
 export default manager;

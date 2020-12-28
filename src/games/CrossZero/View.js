@@ -26,6 +26,7 @@ export default class View {
             stateChanged(4)
         } else if (message === 'Вы проиграли в партии') {
             audio.src = './audio/failure.mp3';
+            audio.volume = 0.4;
             audio.play();
             this.metaBoard.textContent = 'Наступющий год оказался не так то прост для тебя? Возьми реванш!';
             stateChanged(3)

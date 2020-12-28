@@ -16,19 +16,17 @@ let game;
  */
 function stateChanged(gameState, whoseMove) {
     if (gameState === 2) {
-        $("#future_finish").removeClass("re-hidden");
-        $("#future_game-field").addClass("re-hidden");
-    }
-    // isReadyToPlay: 0,
-    // inProcess: 1,
-    // isWined: 2,
-    // isLosed: 3,
-    // isDraw: 4,
 
-    console.log(gameState);
+        setTimeout(function() {
+            $("#future_finish").removeClass("re-hidden");
+            $("#future_game-field").addClass("re-hidden");
+        }, 1500);
+    }
 
     if (gameState === 3 || gameState === 4) {
-        game = newGame({ stateChanged });
+        setTimeout(function() {
+            game = newGame({ stateChanged });
+        }, 1500);
     }
 
     if (whoseMove === 1) {
