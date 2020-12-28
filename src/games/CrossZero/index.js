@@ -4,7 +4,7 @@ import * as $ from 'jquery';
 export default function newGame({ stateChanged }) {
 
     // Инициализируем игровую логику. Входной параметр - размер игрового поля
-    const gameLogic = new GameLogic(3);
+    const gameLogic = new GameLogic(3, stateChanged);
 
     var articles = $("#game__board td");
 

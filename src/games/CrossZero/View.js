@@ -1,5 +1,6 @@
 import * as $ from 'jquery';
 // Класс отвечающий за UI: отрисовка/обновление/добавление элементов
+let audio = new Audio();
 export default class View {
     constructor(gameLogic) {
         this.gameLogic = gameLogic;
@@ -10,17 +11,26 @@ export default class View {
         this.board.innerHTML = '';
         this.gameState = this.gameLogic.gameState;
     }
-
+    // const GAME_STATE = {
+    //     isReadyToPlay: 0,
+    //     inProcess: 1,
+    //     isWined: 2,
+    //     isLosed: 3,
+    //     isDraw: 4,
+    // }
     // Обновление UI в зависимости от исхода партии
-    updateUiAfterEndParty(message, alt) {
+    updateUiAfterEndParty(message, stateChanged) {
 
         if (message === 'Ничья') {
             this.metaBoard.textContent = 'Ну что ж, пока вы идете на равных, хочешь отыграться? Ход за тобой!';
+            stateChanged(4)
         } else if (message === 'Вы проиграли в партии') {
+            audio.src = './audio/failure.mp3';
+            audio.play();
             this.metaBoard.textContent = 'Наступющий год оказался не так то прост для тебя? Возьми реванш!';
+            stateChanged(3)
         } else {
             setTimeout(() => {
-                let audio = new Audio();
                 audio.src = './audio/win.mp3';
                 audio.volume = 0.4;
                 audio.play();

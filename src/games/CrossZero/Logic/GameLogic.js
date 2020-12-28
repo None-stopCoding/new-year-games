@@ -12,11 +12,11 @@ const GAME_STATE = {
 
 const audio = new Audio();
 audio.volume = 0.1;
-
+let stateChangedCallback = null;
 // Класс с игровой логикой: ралзичные проверки/ходы игровых сущностей
 export default class GameLogic {
-
-    constructor(lengthBoard) {
+    constructor(lengthBoard, stateCallback) {
+        stateChangedCallback = stateCallback;
         // Инициализация игровой модели
         this.gameModel = [];
 
@@ -82,16 +82,16 @@ export default class GameLogic {
             if (gameobject instanceof Computer) {
                 this.view.updateUiAfterEndParty(
                     "Вы проиграли в партии",
-                    "warning"
+                    stateChangedCallback
                 );
                 this.gameState = GAME_STATE.isLosed;
                 return true;
             }
-            this.view.updateUiAfterEndParty("Вы победили в партии", "success");
+            this.view.updateUiAfterEndParty("Вы победили в партии", stateChangedCallback);
             this.gameState = GAME_STATE.isWined;
             return true;
         } else if (win === false) {
-            this.view.updateUiAfterEndParty("Ничья");
+            this.view.updateUiAfterEndParty("Ничья", stateChangedCallback);
             this.gameState = GAME_STATE.isDraw;
             return false;
         }
