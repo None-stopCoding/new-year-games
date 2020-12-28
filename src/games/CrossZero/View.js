@@ -23,6 +23,9 @@ export default class View {
 
         if (message === 'Ничья') {
             this.metaBoard.textContent = 'Ну что ж, пока вы идете на равных, хочешь отыграться? Ход за тобой!';
+            audio.src = './audio/fany-failure.mp3';
+            audio.volume = 0.4;
+            audio.play();
             stateChanged(4)
         } else if (message === 'Вы проиграли в партии') {
             audio.src = './audio/failure.mp3';
