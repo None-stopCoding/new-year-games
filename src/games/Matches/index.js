@@ -36,10 +36,17 @@ function checkForMatch() {
     /** Если Победил */
     if (matchedCardsCount === cards.length / 2) {
         stateChanged();
+        setTimeout(() => {
+            audio.src = './audio/win.mp3';
+            audio.volume = 0.4;
+            audio.play();
+        }, 100);
     }
 }
 
 function disableCards() {
+    audio.src = './audio/whoosh.mp3';
+    audio.play();
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
     matchedCardsCount += 1;
@@ -47,6 +54,8 @@ function disableCards() {
 }
 
 function unflipCards() {
+    audio.src = './audio/ups.mp3';
+    audio.play();
     setTimeout(() => {
         firstCard.classList.remove("flip");
         secondCard.classList.remove("flip");
@@ -70,6 +79,7 @@ function shuffle() {
 
 export default function init({ stateChangedCallback }) {
     stateChanged = stateChangedCallback;
+
     shuffle();
     cards.forEach((card) => card.addEventListener("click", flipCard));
 }

@@ -16,9 +16,7 @@ export default function newGame({ stateChanged }) {
     // Вешаем обработчик кликов на ячейки игрового поля
     $(articles).on('click', function () {
         gameLogic.clickOnCell(this);
-        setTimeout(() => {
-            stateChanged(gameLogic.gameState);
-        }, 100);
+        stateChanged(gameLogic.gameState);
     });
 
     return gameLogic;

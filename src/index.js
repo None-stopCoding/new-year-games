@@ -45,7 +45,7 @@ $('[data-vzhuh]').on('click', function() {
 
 
 $('[data-ups]').on('click', function() {
-    audio.src = './audio/ups.mp3';
+    audio.src = './audio/fany-failure.mp3';
     audio.play();
 });
 

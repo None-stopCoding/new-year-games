@@ -961,8 +961,7 @@ img {
 .re-message._modern {
   background: rgba(255,255,255,0.6);
   color: #555;
-  padding: 20px;
-  padding-bottom: 20px;
+  padding: 15px;
   max-width: 600px;
   width: auto;
   min-height: auto;
@@ -975,6 +974,9 @@ img {
 .re-message._modern._orange {
   background: rgba(228,151,0,0.722);
   color: #fff;
+  -webkit-box-shadow: 0px 10px 5px 0px rgba(136,103,37,0.6);
+  -moz-box-shadow: 0px 10px 5px 0px rgba(136,103,37,0.6);
+  box-shadow: 0px 10px 5px 0px rgba(136,103,37,0.6);
 }
 .re-message._modern._aqua {
   background: rgba(29,143,206,0.671);
@@ -1119,6 +1121,9 @@ img {
   top: 7px;
   color: #fff;
   text-decoration: none;
+}
+.re-action._modern._red {
+  background: #f86b3f;
 }
 .re-action._modern .re-action__text {
   color: #fff;

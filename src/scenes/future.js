@@ -24,6 +24,9 @@ function stateChanged(gameState, whoseMove) {
     // isWined: 2,
     // isLosed: 3,
     // isDraw: 4,
+
+    console.log(gameState);
+
     if (gameState === 3 || gameState === 4) {
         game = newGame({ stateChanged });
     }

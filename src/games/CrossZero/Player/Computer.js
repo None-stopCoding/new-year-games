@@ -27,7 +27,7 @@ export default class Computer extends SimpleGameObject {
                     if (checkWin(board, this)) {
                         px = i;
                         py = j;
-                        priority = 1;
+                        priority = 2;
                         break;
                     }
                     // Имитируем ход пользователя

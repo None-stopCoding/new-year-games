@@ -18,6 +18,13 @@ export default class View {
             this.metaBoard.textContent = 'Ну что ж, пока вы идете на равных, хочешь отыграться? Ход за тобой!';
         } else if (message === 'Вы проиграли в партии') {
             this.metaBoard.textContent = 'Наступющий год оказался не так то прост для тебя? Возьми реванш!';
+        } else {
+            setTimeout(() => {
+                let audio = new Audio();
+                audio.src = './audio/win.mp3';
+                audio.volume = 0.4;
+                audio.play();
+            }, 100);
         }
         // swal({ title: message, icon: alert });
         this.removeEvent();
