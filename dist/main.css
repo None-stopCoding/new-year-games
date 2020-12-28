@@ -1110,6 +1110,19 @@ img {
 .re-action {
   color: #fff;
 }
+.re-action._modern {
+  border-radius: 10px 0 10px 0;
+  padding: 5px 10px;
+  background: #ff8100;
+  position: relative;
+  left: 15px;
+  top: 7px;
+  color: #fff;
+  text-decoration: none;
+}
+.re-action._modern .re-action__text {
+  color: #fff;
+}
 .re-action__text {
   color: #fff;
 }
@@ -1132,8 +1145,8 @@ img {
   color: #fff;
 }
 .re-game__title._past {
-  color: #2c93d4;
-  text-shadow: 0 0 5px #555;
+  color: rgba(27,0,255,0.82);
+  text-shadow: 0 -1px 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 1px 0 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 .re-game__title._present {
   color: rgba(0,38,255,0.671);
@@ -1159,9 +1172,6 @@ img {
 .re-game__field._column-direction {
   flex-direction: column;
 }
-.re-game__toggler {
-  margin-bottom: 10px;
-}
 .re-game__toggler._right {
   text-align: right;
 }
@@ -1184,6 +1194,26 @@ img {
   color: #fff;
   cursor: pointer;
   text-shadow: 0 0 5px #000;
+}
+.re-toggler._hint {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  padding: 5px;
+  text-shadow: 0 -1px 0 rgba(86,85,160,0.74), 0 -1px 0 rgba(86,85,160,0.74), 0 1px 0 rgba(86,85,160,0.74), 0 1px 0 rgba(86,85,160,0.74), -1px 0 0 rgba(86,85,160,0.74), 1px 0 0 rgba(86,85,160,0.74), -1px 0 0 rgba(86,85,160,0.74), 1px 0 0 rgba(86,85,160,0.74), -1px -1px 0 rgba(86,85,160,0.74), 1px -1px 0 rgba(86,85,160,0.74), -1px 1px 0 rgba(86,85,160,0.74), 1px 1px 0 rgba(86,85,160,0.74), -1px -1px 0 rgba(86,85,160,0.74), 1px -1px 0 rgba(86,85,160,0.74), -1px 1px 0 rgba(86,85,160,0.74), 1px 1px 0 rgba(86,85,160,0.74);
+}
+.re-toggler._hint:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  transform: translateX(-105%);
+  bottom: 3px;
+  transition: 0.3s transform;
+}
+.re-toggler._hint:hover:before {
+  transform: translateX(0%);
 }
 /* Порядок стилей имеет значение */
 .re-hidden {
