@@ -9,6 +9,20 @@ const scenes = {
 };
 let current = null;
 
+function mobileStub() {
+    $(`#mobile-stub`)
+            .css("display", "none")
+            .removeClass("re-hide")
+            .fadeIn();
+
+        $(`#preload`)
+            .fadeOut()
+            .delay(500)
+            .addClass("re-hide");
+
+        document.body.classList.add('is-mobile');
+}
+
 function runScene(sceneName) {
     const currentScene = scenes[sceneName];
     current = currentScene.next;
@@ -23,17 +37,7 @@ function runScene(sceneName) {
 
         localStorage.setItem("currentScene", currentScene.next);
     } else {
-        $(`#mobile-stub`)
-            .css("display", "none")
-            .removeClass("re-hide")
-            .fadeIn();
-
-        $(`#preload`)
-            .fadeOut()
-            .delay(500)
-            .addClass("re-hide");
-
-        document.body.classList.toggle('is-mobile');
+        mobileStub();
     }
 }
 
@@ -46,6 +50,9 @@ const manager = {
 
         if (scene && scene.id !== initialScene) {
             scenes.preload.next = scene.id;
+        }
+        if (!deviceDetect.desktop()) {
+            mobileStub();
         }
     },
     next: function(fromScene) {
