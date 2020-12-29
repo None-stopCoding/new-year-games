@@ -99,6 +99,7 @@ function buildPieces() {
         }
     }
     canvas.onmousedown = shufflePuzzle;
+    canvas.ontouchstart = shufflePuzzle;
 }
 
 function shufflePuzzle() {
@@ -133,6 +134,7 @@ function shufflePuzzle() {
         }
     }
     canvas.onmousedown = onPuzzleClick;
+    canvas.ontouchstart = onPuzzleClick;
 }
 
 function onPuzzleClick(e) {
@@ -168,6 +170,8 @@ function onPuzzleClick(e) {
         );
         ctx.restore();
         canvas.onmousemove = updatePuzzle;
+        canvas.ontouchmove = updatePuzzle;
+        canvas.ontouchend = pieceDropped;
         canvas.onmouseup = pieceDropped;
     }
 }

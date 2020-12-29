@@ -1,4 +1,5 @@
 import * as $ from "jquery";
+import deviceDetect from 'current-device';
 
 const scenes = {
     start: {
@@ -12,14 +13,28 @@ function runScene(sceneName) {
     const currentScene = scenes[sceneName];
     current = currentScene.next;
 
-    $(`#${currentScene.next}`)
-        .css("display", "none")
-        .removeClass("re-hide")
-        .fadeIn();
+    if (deviceDetect.desktop()) {
+        $(`#${currentScene.next}`)
+            .css("display", "none")
+            .removeClass("re-hide")
+            .fadeIn();
 
-    $(`#${currentScene.id}`).fadeOut();
+        $(`#${currentScene.id}`).fadeOut();
 
-    localStorage.setItem("currentScene", currentScene.next);
+        localStorage.setItem("currentScene", currentScene.next);
+    } else {
+        $(`#mobile-stub`)
+            .css("display", "none")
+            .removeClass("re-hide")
+            .fadeIn();
+
+        $(`#preload`)
+            .fadeOut()
+            .delay(500)
+            .addClass("re-hide");
+
+        document.body.classList.toggle('is-mobile');
+    }
 }
 
 const manager = {

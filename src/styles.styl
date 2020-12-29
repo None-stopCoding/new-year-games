@@ -18,9 +18,14 @@ img {
 .re-body
     height: 100%;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     min-width: 1170px;
     font-family: 'Flow';
+    &.is-mobile
+        max-width: 100%;
+        max-height: 100%;
+        min-width: 0px;
     &__header
         font-family: 'new-year';
         font-size: 60px;
@@ -118,7 +123,7 @@ img {
 .re-scene
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     display: flex;
