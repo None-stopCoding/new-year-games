@@ -8,6 +8,17 @@
     <link rel="icon" href="favicon.png"><link href="main.css" rel="stylesheet"></head>
     <body class="re-body">
         <div class="re-body__content">
+            <div class="re-scene _mobile-stub re-hide" id="mobile-stub">
+                <div class="re-gift" style="max-width: 100%;max-height: 100%;">
+                    <div class="re-gift__bg">
+                    </div>
+                </div>
+                <div class="re-scene__content" style="display: flex;flex:1;align-items: center;justify-content: center;">
+                    <div class="re-message _modern" style="font-size: 32px;text-align: center;">
+                        Доступна только десктопная версия!
+                    </div>
+                </div>
+            </div>
             <div class="re-scene _preloader" id="preload">
                 <div class="re-gift">
                     <div class="re-gift__bg">
@@ -95,8 +106,8 @@
                         <div class="re-gift__content-wrapper">
                             <div class="re-gift__text">
                                 <div class="re-title _size-tiny _color-red">
-                                    Привет!<br/>
-                                    Накануне Нового года даже самые отъявленные скептики начинают вдруг верить в чудеса!<br/>
+                                    -Привет!<br/>
+                                    Накануне Нового года даже самые убеждённые скептики начинают вдруг верить в чудеса!<br/>
                                     Под бой курантов вспоминают прошлое, подводят итоги настоящего и всей душой верят в счастливое будущее.<br/>
                                     Хочешь узнать, что ждет тебя в 2021?<br/>
                                     Пройди испытание и получи предсказание!
@@ -173,11 +184,11 @@
                         <div class="re-scene__game-canvas">
                             <div class="re-game">
                                 <div class="re-game__title _past">
-                                    Как звали кошку соседки тети Маши?
-                                    На что так быстро ушла первая стипендия?
-                                    Какой была жизнь до телефонии?
-                                    Со временем отрывки прошлого сливаются в неясные картинки.
-                                    Сможешь навести порядок в памяти?
+                                    Как звали кошку соседки тети Маши?<br/>
+                                    На что так быстро ушла первая стипендия? Какой была жизнь до телефонии?<br/>
+                                    Со временем отрывки прошлого сливаются в неясные картинки.<br/>
+                                    Сможешь навести порядок в памяти?<br/>
+                                    Чтобы проверить, собери пазл.<br/>
                                 </div>
                                 <div class="re-game__field">
                                     <div class="re-game__field-main" id="pazzle-game-field">
@@ -213,7 +224,7 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _modern _past">
                                     <div class="re-message__text">
-                                        Молодец! Айда к следующему заданию.
+                                        -Молодец! Перейдём к следующему заданию?
                                     </div>
                                     <div class="re-message__action">
                                         <a
@@ -244,11 +255,10 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _present _orange _modern">
                                     <div class="re-message__text">
-                                        Записать ребенка на онлайн-кружок,
-                                        не забыть про срочную задачу на удалёнке,
-                                        взять маску перед выходом на улицу.
-                                        Вымыть руки не один раз, а двадцать один!
-                                        Как много всего нужно запомнить, особенно вудивительном 2020! Потренируем память?
+                                        Записать ребенка на онлайн-кружок, не забыть про срочную задачу на удалёнке, взять маску перед выходом на улицу.<br/>
+                                        Вымыть руки не один раз, а двадцать один!<br/>
+                                        Как много всего нужно запомнить, особенно в удивительном 2020!<br/>
+                                        Проверим твою память.
                                     </div>
                                     <div class="re-message__action">
                                         <a
@@ -269,7 +279,7 @@
                         <div class="re-scene__game _fill">
                             <div class="re-game">
                                 <div class="re-game__title _present">
-                                    Проверим твою память!
+                                    Найди одинаковые картинки.
                                 </div>
                                 <div class="re-game__field">
                                     <section class="memory-game">
@@ -507,7 +517,8 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _modern _aqua _future">
                                     <div class="re-message__text">
-                                        И так, ты почти дошел до конца!
+                                        Достижение любой цели начинается с выбора стратегии!<br/>
+                                        Ну что, попробуем обыграть 2021?
                                     </div>
                                     <div class="re-message__action">
                                         <a
@@ -530,7 +541,7 @@
                         <div class="re-scene__game-canvas">
                             <div class="re-game">
                                 <div class="re-game__title _future">
-                                    Достижение любой цели начинается с выбора стратегии! Ну что, попробуем обыграть 2021?
+                                    Сыграй в  классическую игру "Крестики-нолики". Первый ход твой.
                                 </div>
                                 <div class="re-game__field _column-direction">
                                     <table id="game__board" class="game__board"></table>
@@ -554,9 +565,7 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message _modern _aqua _future">
                                     <div class="re-message__text">
-                                        Ты прошел последнее испытание!
-                                        Ступай дельше, духи настоящего,
-                                        прошлого и будущего вознаградят тебя!
+                                        Ты прошёл все новогодние задания и вот-вот узнаешь, что тебя ждет в 2021 году!
                                     </div>
                                     <div class="re-message__action">
                                         <a
@@ -597,7 +606,7 @@
                         <div class="re-scene__ghost-message">
                             <div class="re-message _end">
                                 <div class="re-message__text">
-                                    Ну вот и все!
+                                    Готов получить предсказание?!
                                 </div>
                                 <div class="re-message__action">
                                     <a id="end_trigger" class="re-action" href="#">

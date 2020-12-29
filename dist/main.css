@@ -912,9 +912,15 @@ img {
 .re-body {
   height: 100%;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   min-width: 1170px;
   font-family: 'Flow';
+}
+.re-body.is-mobile {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0px;
 }
 .re-body__header {
   font-family: 'new-year';
@@ -947,7 +953,7 @@ img {
   background: rgba(255,255,255,0.6);
   color: #555;
   padding: 15px;
-  max-width: 600px;
+  max-width: 700px;
   width: auto;
   min-height: auto;
   border-radius: 10px;
@@ -989,12 +995,12 @@ img {
 .re-message._present {
   position: relative;
   top: -150px;
-  left: -200px;
+  left: 0px;
 }
 .re-message._future {
   position: relative;
-  top: -100px;
-  left: -250px;
+  top: -50px;
+  left: -200px;
 }
 .re-message._future .re-message__text {
   font-size: 28px;
@@ -1002,10 +1008,11 @@ img {
 .re-message._end {
   position: relative;
   left: -250px;
-  top: -200px;
+  top: -150px;
 }
 .re-message__text {
   text-align: center;
+  line-height: 1.2;
   font-size: 32px;
 }
 .re-message__action {
@@ -1202,6 +1209,17 @@ img {
 }
 .re-toggler._hint:hover:before {
   transform: translateX(0%);
+}
+@media (max-height: 850px) {
+  .re-game__title {
+    font-size: 32px;
+  }
+  .re-game__title._present {
+    font-size: 75px;
+  }
+  .re-message._modern .re-message__text {
+    font-size: 18px;
+  }
 }
 /* Порядок стилей имеет значение */
 .re-hidden {
