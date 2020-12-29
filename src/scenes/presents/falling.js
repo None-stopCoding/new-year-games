@@ -180,8 +180,8 @@ export default function fallingAnimation(opts) {
         el.children[0].style.transform = "rotate(0)";
         el.children[0].style.transition = el.style.transition;
 
-        setTimeout(() => {
-            requestAnimationFrame(() => {
+        setTimeout(function() {
+            requestAnimationFrame(function() {
                 el.classList.remove("re-hide");
                 el.classList.add("re-present");
                 el.style.transform = `translateY(0px)`;

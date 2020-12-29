@@ -34,7 +34,7 @@ export default class View {
             this.metaBoard.textContent = 'Наступющий год оказался не так то прост для тебя? Возьми реванш!';
             stateChanged(3)
         } else {
-            setTimeout(() => {
+            setTimeout(function()  {
                 audio.src = './audio/win.mp3';
                 audio.volume = 0.4;
                 audio.play();

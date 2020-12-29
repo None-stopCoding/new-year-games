@@ -302,6 +302,9 @@ function resetPuzzleAndCheckWin() {
         }
     }
     if (gameWin) {
+        audio.src = './audio/win.mp3'
+        audio.volume= 0.4;
+        audio.play();
         setTimeout(gameOver, 330);
     }
 }

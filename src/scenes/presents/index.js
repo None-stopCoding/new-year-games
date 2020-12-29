@@ -20,7 +20,7 @@ export default function run() {
     myaudio.play();
     runParticles();
 
-    setTimeout(() => {
+    setTimeout(function() {
         let wish = localStorage.getItem('wish');
         if (!wish) {
             wish = wishes[_.random(0, wishes.length - 1)];
@@ -34,11 +34,11 @@ export default function run() {
         textWrapper.classList.remove("re-hide");
 
         audio.play();
-        setTimeout(() => {
+        setTimeout(function() {
             envelop.classList.remove("re-hide");
             envelop.classList.add("animated");
             envelop.classList.add("tada");
-            setTimeout(() => {
+            setTimeout(function() {
                 letter.style.transform = "translateY(0)";
                 localStorage.setItem('currentScene', 'end');
             }, 1500);

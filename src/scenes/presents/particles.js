@@ -6,12 +6,12 @@ let mouseX, mouseY;
 canvas.height = innerHeight;
 canvas.width = innerWidth;
 
-addEventListener("resize", () => {
+addEventListener("resize", function() {
     canvas.height = innerHeight;
     canvas.width = innerWidth;
     init();
 });
-addEventListener("mousemove", (e) => {
+addEventListener("mousemove", function(e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
     return mouseX;

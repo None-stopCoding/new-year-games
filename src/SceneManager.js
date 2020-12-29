@@ -38,7 +38,7 @@ function runScene(sceneName) {
 }
 
 const manager = {
-    start: ({ initialScene = "start" }) => {
+    start: function({ initialScene = "start" }) {
         current = initialScene;
 
         const storedScene = localStorage.getItem("currentScene");
@@ -48,7 +48,7 @@ const manager = {
             scenes.preload.next = scene.id;
         }
     },
-    next: (fromScene) => {
+    next: function(fromScene) {
         const scene = scenes[fromScene || current];
 
         if (scene.next) {
@@ -56,7 +56,7 @@ const manager = {
         }
     },
 
-    register: ({ id, next }) => {
+    register: function({ id, next }) {
         scenes[id] = {
             id,
             next,

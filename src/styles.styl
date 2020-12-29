@@ -57,7 +57,7 @@ img {
         background: rgba(255,255,255, 0.6);
         color: #555;
         padding: 15px;
-        max-width: 600px;
+        max-width: 700px;
         width: auto;
         min-height: auto;
         border-radius: 10px;
@@ -98,22 +98,23 @@ img {
     &._present
         position: relative;
         top: -150px;
-        left: -200px;
+        left: 0px;
 
     &._future
         position: relative;
-        top: -100px;
-        left: -250px;
+        top: -50px;
+        left: -200px;
         & ^[0]__text
             font-size: 28px;
 
     &._end
         position: relative;
         left: -250px;
-        top: -200px;
+        top: -150px;
 
     &__text
         text-align: center;
+        line-height: 1.2;
         font-size: 32px;
 
     &__action
@@ -123,7 +124,7 @@ img {
 .re-scene
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     display: flex;
@@ -388,5 +389,17 @@ img {
             1px -1px 0 rgba( 86, 85, 160, 0.74 ),
             -1px 1px 0 rgba( 86, 85, 160, 0.74 ),
             1px 1px 0 rgba( 86, 85, 160, 0.74 )
+
+@media (max-height: 850px)
+    .re-game
+        &__title
+            font-size: 32px;
+            &._present
+                font-size: 75px;
+
+    .re-message
+        &._modern
+            & ^[0]__text
+                font-size: 18px;
 /*! Порядок стилей имеет значение */
 @require './styles/utils';
