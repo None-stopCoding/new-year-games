@@ -20,9 +20,14 @@
     transform scale(1)
     &.flip
         transform rotateY(180deg)
+        .back-face-img
+            opacity: 0;
     &:active
         transform scale(0.97)
         transition transform .2s
+
+.back-face-img
+    transition: 0.3s opacity;
 
 .front-face,
 .back-face

@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const config = {
     entry: './src/index.js',
@@ -17,12 +18,29 @@ const config = {
         rules: [
             {
                 test: /\.js$/,
-                use: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                },
                 exclude: /node_modules/,
             },
             {
                 test: /\.styl$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: ["postcss-preset-env"],
+                            },
+                        },
+                    },
+                    'stylus-loader'
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -60,6 +78,7 @@ const config = {
                 { from: './src/audio', to: './audio' }
             ],
         }),
+        autoprefixer
     ],
 };
 
