@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 const config = {
     entry: './src/index.js',
-    mode: 'development',
+    mode: 'production',
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '',
