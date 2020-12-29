@@ -206,7 +206,7 @@ export default function fallingAnimation(opts) {
         var row = document.createElement("div");
         row.className = "re-presents-field-row";
         row.style.top = (totalRowsCount - rowIndex - 1) * 120 + "px";
-        items.forEach((isVisible, index) => {
+        items.forEach(function(isVisible, index) {
             elem = createElem({
                 text: "Текст заглушка",
                 imgPath: `./images/present-${_.random(1, 6)}.png`,
@@ -226,7 +226,7 @@ export default function fallingAnimation(opts) {
     /** Построчно вставит элементы  */
     function pasteItems() {
         var context = getPresentsField();
-        presentsMap.forEach((el, index) => {
+        presentsMap.forEach(function(el, index) {
             context.appendChild(
                 createRowWithElems(el, index, presentsMap.length)
             );

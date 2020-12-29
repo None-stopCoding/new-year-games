@@ -95,7 +95,7 @@ function init() {
         );
     }
 }
-addEventListener("click", (e) => {
+addEventListener("click", function(e) {
     for (let i = 0; i < 20; i++) {
         const randRadius = Math.random() * 15;
         const randVelocity = Math.random() * 10;
@@ -113,7 +113,7 @@ addEventListener("click", (e) => {
 });
 function animate() {
     c.clearRect(0, 0, innerWidth, innerHeight);
-    particlesArray.forEach((particle) => {
+    particlesArray.forEach(function(particle) {
         particle.update();
     });
     requestAnimationFrame(animate);

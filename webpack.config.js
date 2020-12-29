@@ -10,9 +10,18 @@ const config = {
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '',
         filename: 'bundle.js',
+        environment: {
+            arrowFunction: false,
+            bigIntLiteral: false,
+            const: false,
+            destructuring: false,
+            dynamicImport: false,
+            forOf: false,
+        }
     },
-    target: 'node',
+    target: ['web', 'es5'],
     watch: true,
     module: {
         rules: [

@@ -25,7 +25,7 @@ function preloaderHandler() {
         './past.png',
         './present.png',
         './future.png'
-    ].forEach((path) => {
+    ].forEach(function(path) {
         const img = new Image();
         img.src = path;
     })

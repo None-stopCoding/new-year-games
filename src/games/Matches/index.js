@@ -36,7 +36,7 @@ function checkForMatch() {
     /** Если Победил */
     if (matchedCardsCount === cards.length / 2) {
         stateChanged();
-        setTimeout(() => {
+        setTimeout(function() {
             audio.src = './audio/win.mp3';
             audio.volume = 0.4;
             audio.play();
@@ -56,7 +56,7 @@ function disableCards() {
 function unflipCards() {
     audio.src = './audio/ups.mp3';
     audio.play();
-    setTimeout(() => {
+    setTimeout(function()  {
         firstCard.classList.remove("flip");
         secondCard.classList.remove("flip");
 
@@ -71,7 +71,7 @@ function resetBoard() {
     secondCard = null;
 }
 function shuffle() {
-    cards.forEach((card) => {
+    cards.forEach(function(card) {
         let ramdomPos = Math.ceil(Math.random() * 12);
         card.style.order = ramdomPos;
     });
@@ -81,5 +81,5 @@ export default function init({ stateChangedCallback }) {
     stateChanged = stateChangedCallback;
 
     shuffle();
-    cards.forEach((card) => card.addEventListener("click", flipCard));
+    cards.forEach(function(card) { card.addEventListener("click", flipCard)});
 }

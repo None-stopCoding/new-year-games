@@ -361,6 +361,18 @@ tr:last-of-type td:last-child {
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
+@media (max-height: 756px) {
+  .game__board {
+    height: 400px;
+    width: 400px;
+  }
+  tr > td,
+  tr,
+  td {
+    width: 120px;
+    height: 12px;
+  }
+}
 .memory-game {
   width: 640px;
   height: 640px;
@@ -411,6 +423,11 @@ tr:last-of-type td:last-child {
 .front-face {
   transform: rotateY(180deg);
   background: rgba(186,209,255,0.91);
+}
+@media (max-height: 756px) {
+  .memory-game {
+    height: 530px;
+  }
 }
 .re-spinner {
   height: 2em;
@@ -1211,8 +1228,19 @@ img {
   transform: translateX(0%);
 }
 @media (max-height: 850px) {
+  .re-scene__ghost-image {
+    max-height: 500px;
+  }
+  .re-gift__preview-person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .re-game__title {
     font-size: 32px;
+  }
+  .re-game__title._past {
+    padding: 25px;
   }
   .re-game__title._present {
     font-size: 75px;
