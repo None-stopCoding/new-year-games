@@ -12,6 +12,7 @@
         "build-prod": "webpack --mode production"
     },
     "dependencies": {
+        "@babel/polyfill": "^7.12.1",
         "@babel/preset-es2015": "^7.0.0-beta.53",
         "jquery": "^3.5.1",
         "lodash": "^4.17.20"
@@ -22,6 +23,7 @@
         "@babel/preset-env": "^7.12.11",
         "autoprefixer": "^10.1.0",
         "babel-loader": "^8.2.2",
+        "babel-plugin-lodash": "^3.3.4",
         "copy-webpack-plugin": "^7.0.0",
         "css-loader": "^5.0.1",
         "current-device": "^0.10.1",

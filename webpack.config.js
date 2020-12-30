@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const config = {
     entry: './src/index.js',
     mode: 'production',
@@ -29,7 +29,20 @@ const config = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ["@babel/preset-env"],
+                    presets: [
+                        [
+                            "@babel/preset-env",
+                            {
+                                "targets": {
+                                    "chrome": "58",
+                                    "ie": "11"
+                                },
+                                useBuiltIns: "entry",
+                                corejs: "3.6.5"
+                            }
+                        ],
+                    ],
+                    plugins: ['lodash']
                 }
             },
             {
@@ -41,7 +54,12 @@ const config = {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: ["postcss-preset-env"],
+                                plugins: [
+                                    "postcss-preset-env",
+                                    autoprefixer({
+                                        browsers:['ie >= 8', 'last 4 version']
+                                    })
+                                ],
                             },
                         },
                     },
@@ -64,6 +82,7 @@ const config = {
         ],
     },
     plugins: [
+        // new LodashModuleReplacementPlugin,
         new HtmlWebpackPlugin({
             title: 'Калейдоскоп предсказаний',
             template: './index.html',
@@ -84,7 +103,7 @@ const config = {
                 { from: './src/audio', to: './audio' }
             ],
         }),
-        autoprefixer
+        autoprefixer,
     ],
 };
 

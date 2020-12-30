@@ -1,4 +1,4 @@
-import _ from "lodash";
+import {default as _} from "lodash";
 export default function fallingAnimation(opts) {
     /**
      * @interface presentsNumber

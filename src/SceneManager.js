@@ -28,12 +28,12 @@ function runScene(sceneName) {
     current = currentScene.next;
 
     if (deviceDetect.desktop()) {
-        $(`#${currentScene.next}`)
+        $('#' + currentScene.next)
             .css("display", "none")
             .removeClass("re-hide")
             .fadeIn();
 
-        $(`#${currentScene.id}`).fadeOut();
+        $('#' + currentScene.id).fadeOut();
 
         localStorage.setItem("currentScene", currentScene.next);
     } else {

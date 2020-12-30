@@ -71,7 +71,8 @@ function resetBoard() {
     secondCard = null;
 }
 function shuffle() {
-    cards.forEach(function(card) {
+
+    Array.prototype.forEach.call(cards, function(card) {
         let ramdomPos = Math.ceil(Math.random() * 12);
         card.style.order = ramdomPos;
     });
@@ -81,5 +82,7 @@ export default function init({ stateChangedCallback }) {
     stateChanged = stateChangedCallback;
 
     shuffle();
-    cards.forEach(function(card) { card.addEventListener("click", flipCard)});
+    Array.prototype.forEach.call(cards, function(card) {
+        card.addEventListener("click", flipCard)
+    });
 }
