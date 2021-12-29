@@ -105,16 +105,15 @@
                         </div>
                         <div class="re-gift__content-wrapper">
                             <div class="re-message__cloud _bottom-padding">
-                                -Тензоровец, привет! <br/><br/>
-                                Только ты мне сможешь помочь и только ты в силах <br/>
-                                исправить то, что произошло. Мне нужно найти <br/>
-                                Джона Коннора и помочь ему уничтожить Скайнет. <br/>
-                                Но что-то случилось с временной шкалой <br/>
-                                и я не могу его найти. Мне нужна твоя помощь, <br/>
-                                чтобы найти 2 подсказку или предсказание, <br/>
-                                где он может быть.<br/><br/>
+                                Тензоровец, привет!<br/><br/>
 
-                                Пройди испытание и получи предсказание!
+                                Только ты в силах исправить то, что произошло.<br/>
+                                Мне нужно найти Джона Коннора и помочь ему <br/>
+                                уничтожить Скайнет. Но его нигде нет. Помоги<br/>
+                                мне найти подсказку или предсказание, где он<br/>
+                                может быть.<br/><br/>
+
+                                Ну что, ты готов к приключениям?
                             </div>
                             <div data-vzhuh class="re-gift__action" id="init">
                                 Вжух!
@@ -123,34 +122,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="re-scene _start re-hidden" id="start">
-                <div class="re-scene__content _align-end">
-                    <div class="re-scene__ghost">
-                        <img
-                            class="re-scene__ghost-image"
-                            src="./images/scene-preview/dimon.png"
-                            alt=""
-                        />
-                        <div class="re-scene__ghost-message">
-                            <div class="re-message _start">
-                                <div class="re-message__text" style="font-size: 24px;">
-                                    Привет! Накануне Нового года даже самые отъявленные скептики начинают вдруг верить в чудеса!
-                                    Под бой курантов вспоминают прошлое, подводят итоги настоящего и всей душой верят в счастливое будущее.
-                                    Хочешь узнать, что ждет тебя в 2021?
-                                    Пройди испытание и получи предсказание!
-                                </div>
-                                <div class="re-message__action">
-                                    <a id="init" class="re-action" href="#">
-                                        <span class="re-action__text"
-                                            >Вжух!</span
-                                        >
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="re-scene _past re-hide" id="past">
                 <div class="re-scene__content _align-center">
                     <div class="re-scene__content-wrapper" id="past_preview">
@@ -164,9 +135,12 @@
                             <div class="re-scene__ghost-message" style="margin-top: 75%;">
                                 <div class="re-message__cloud" style="width: 480px; height: 255px;">
                                     <div class="re-message__cloud-text">
-                                        Ну что,<br/> ты готов к приключениям?
+                                        Терминатор отправился в 1984 <br/>
+                                        год, чтобы найти Джона. Но<br/>
+                                        на пути, вместо Джона, его<br/>
+                                        ждет испытание.
                                     </div>
-                                    <div class="re-message__action _cloud-corner">
+                                    <div class="re-message__action _cloud-corner" style="padding-top: 20px;">
                                         <a
                                             id="past_trigger"
                                             class="re-action _modern"
@@ -186,63 +160,47 @@
                         <div class="re-scene__game-canvas">
                             <div class="re-game">
                                 <div class="re-game__title _past">
-                                    Как звали кошку соседки тети Маши?<br/>
-                                    На что так быстро ушла первая стипендия? Какой была жизнь до телефонии?<br/>
-                                    Со временем отрывки прошлого сливаются в неясные картинки.<br/>
-                                    Сможешь навести порядок в памяти?<br/>
-                                    Чтобы проверить, собери пазл.<br/>
+                                    Набери 20 очков, взрывая питарды!
                                 </div>
                                 <div class="re-game__field">
-                                    <div class="re-game__field-main" id="pazzle-game-field">
-                                        <div class="re-game__toggler _right">
-                                            <div data-ups class="re-toggler _hint" id="past-game-toggler" data-hide="#pazzle-game-field" data-show="#pazzle-hint">
-                                                Ну че началось то... Дай подсказку!
-                                            </div>
-                                        </div>
-                                        <canvas class="" id="pazzle-game"></canvas>
-                                    </div>
-                                    <div class="re-game__hint _hint" style="display: none;" id="pazzle-hint">
-                                        <div class="re-game__toggler _right">
-                                            <div class="re-toggler _hint" data-vzhuh data-hide="#pazzle-hint" data-show="#pazzle-game-field">
-                                                Все понятно, верни обратно!
-                                            </div>
-                                        </div>
-                                        <img id="pazzle-result" src="" alt="" />
+                                    <div id="extra"></div>
+                                    <div id="desc">
+                                        <div id="browser"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="re-scene__content-wrapper re-hidden"
-                        id="past_finish"
-                    >
-                        <div class="re-scene__ghost">
-                            <img
-                                class="re-scene__ghost-image"
-                                src="./images/person/well-done.png"
-                                alt=""
-                            />
-                            <div class="re-scene__ghost-message">
-                                <div class="re-message _modern _past">
-                                    <div class="re-message__text">
-                                        -Молодец! Перейдём к следующему заданию?
-                                    </div>
-                                    <div class="re-message__action">
-                                        <a
-                                            id="past_run-next"
-                                            class="re-action _modern _orange"
-                                            href="#"
-                                        >
-                                            <span data-vzhuh class="re-action__text"
-                                                >Вжух!</span
-                                            >
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div-->
+<!--                        class="re-scene__content-wrapper re-hidden"-->
+<!--                        id="past_finish"-->
+<!--                    >-->
+<!--                        <div class="re-scene__ghost">-->
+<!--                            <img-->
+<!--                                class="re-scene__ghost-image"-->
+<!--                                src="./images/person/well-done.png"-->
+<!--                                alt=""-->
+<!--                            />-->
+<!--                            <div class="re-scene__ghost-message">-->
+<!--                                <div class="re-message _modern _past">-->
+<!--                                    <div class="re-message__text">-->
+<!--                                        -Молодец! Перейдём к следующему заданию?-->
+<!--                                    </div>-->
+<!--                                    <div class="re-message__action">-->
+<!--                                        <a-->
+<!--                                            id="past_run-next"-->
+<!--                                            class="re-action _modern _orange"-->
+<!--                                            href="#"-->
+<!--                                        >-->
+<!--                                            <span data-vzhuh class="re-action__text"-->
+<!--                                                >Вжух!</span-->
+<!--                                            >-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
             <div class="re-scene _present re-hide" id="present">
@@ -258,7 +216,7 @@
                             <div class="re-scene__ghost-message">
                                 <div class="re-message__cloud" style="width: 560px; height: 310px;">
                                     Если Джон и есть здесь, то мне просто так до него не добраться – нужно<br/>
-                                    решить ребусы. Помоги мне пройти этот этап, иначе на счету каждая секунда.
+                                    решить ребусы. Помоги мне пройти этот этап. На счету каждая секунда!
 
                                     <div class="re-message__action">
                                         <a
@@ -281,21 +239,21 @@
                                 <div class="re-game__Riddles-row">
                                     <img src="./images/scene-present/riddles/first.png" alt="first"/>
                                     <div class="re-game__Riddles-answer">
-                                        <input type="text" class="re-game__Riddles-input" id="riddles-first-input" />
+                                        <input type="text" class="re-game__Riddles-input" id="riddles-first-input" autocomplete="off"/>
                                         <button class="re-game__Riddles-submit" id="riddles-first">Try me!</button>
                                     </div>
                                 </div>
                                 <div class="re-game__Riddles-row">
                                     <img src="./images/scene-present/riddles/second.png" alt="second"/>
                                     <div class="re-game__Riddles-answer">
-                                        <input type="text" class="re-game__Riddles-input" id="riddles-second-input"/>
+                                        <input type="text" class="re-game__Riddles-input" id="riddles-second-input" autocomplete="off"/>
                                         <button class="re-game__Riddles-submit" id="riddles-second">Try me!</button>
                                     </div>
                                 </div>
                                 <div class="re-game__Riddles-row">
                                     <img src="./images/scene-present/riddles/third.png" alt="third" />
                                     <div class="re-game__Riddles-answer">
-                                        <input type="text" class="re-game__Riddles-input" id="riddles-third-input" />
+                                        <input type="text" class="re-game__Riddles-input" id="riddles-third-input"  autocomplete="off"/>
                                         <button class="re-game__Riddles-submit" id="riddles-third">Try me!</button>
                                     </div>
                                 </div>
@@ -339,8 +297,8 @@
                             />
                             <div class="re-scene__ghost-message">
                                 <div class="re-message__cloud" style="width: 580px">
-                                    И снова испытание... даже будущем не так просто найти Джона. <br/>
-                                    Но я должен пройти! Иначе Скайнет захватит всю планету и я не смогу никого спасти.
+                                    И снова испытание... даже в будущем не так просто найти Джона. <br/>
+                                    Но я должен! Иначе Скайнет захватит всю планету.
 
                                     <div class="re-message__action">
                                         <a

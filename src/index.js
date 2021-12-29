@@ -5,6 +5,7 @@ import past from './scenes/past';
 import present from './scenes/present';
 import future from './scenes/future';
 import end from './scenes/end';
+import './games/FruitNinja/scripts/all';
 import './styles.styl';
 
 SceneManager.register({ id: "preload", next: "start" });
