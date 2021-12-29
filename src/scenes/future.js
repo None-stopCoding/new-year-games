@@ -45,7 +45,7 @@ function initHandler() {
 function gameFinished() {
     setTimeout(function() {
         $("#future_game-field").addClass("re-hidden").fadeOut().delay(1000);
-        $("#future_finish").removeClass("re-hidden").fadeIn();
+        $("#future_finish").removeClass("re-hidden").fadeIn().delay(1300);
         $("#future .re-scene__content").removeClass("_align-end").addClass("_align-center");
     }, 1000);
 }

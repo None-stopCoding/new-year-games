@@ -1,4 +1,5 @@
 import './styles.styl';
+import { showMessage } from '../../utils';
 
 let treesFinishedCallback;
 export function showTrees(nodeContainer, finishedCallback) {
@@ -37,8 +38,11 @@ function createTree(treeType) {
 function treeSelected(event) {
     var treeType = event.target.src.split('/').pop().split('Tree.png')[0];
     if (treeType === 'usual') {
-        alert('Амм.. Эта та же елка, что и все другие :(')
-    } else if (confirm('Отлично! Вы нашли ту самую елку')) {
-        treesFinishedCallback();
+        showMessage('Амм.. Эта та же елка, что и все другие :(');
+    } else {
+        showMessage('Отлично! Ты нашел ту самую елку', {
+            type: 'success',
+            callback: treesFinishedCallback
+        });
     }
 }

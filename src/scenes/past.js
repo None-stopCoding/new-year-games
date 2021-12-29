@@ -13,7 +13,7 @@ sceneManager.register({ id: "past", next: "present" });
 
 getElementById("past_trigger").addEventListener("click", initHandler);
 
-getElementById("past_run-next").addEventListener("click", runNextHandler);
+// getElementById("past_run-next").addEventListener("click", runNextHandler);
 //
 // /**
 //  *

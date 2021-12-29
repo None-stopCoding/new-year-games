@@ -12,9 +12,14 @@ let answers = {
 sceneManager.register({ id: 'present', next: 'future' });
 
 getElementById('present_trigger').addEventListener('click', initHandler);
+getElementById('present_run-next').addEventListener('click', runNextHandler);
 
-getElementById('present_run-next')
-    .addEventListener('click', runNextHandler);
+document.querySelectorAll('.re-game__Riddles-input').forEach(function(component) {
+    component.addEventListener('mousedown', function(event) {
+        event.target.focus();
+        console.log(event.target);
+    })
+})
 
 function isGameEndedCallback() {
     setTimeout(function() {
@@ -41,12 +46,12 @@ function checkValue(riddle) {
     let answer = Object.keys(answers[riddle])[0];
 
     if (input.val() === answer) {
-        input.removeClass('error');
-        input.addClass('success');
+        input.removeClass('error-border');
+        input.addClass('success-border');
         answers[riddle][answer] = true;
     } else {
-        input.removeClass('success');
-        input.addClass('error');
+        input.removeClass('success-border');
+        input.addClass('error-border');
     }
 
     if (Object.keys(answers).every(function(key) {

@@ -5,6 +5,8 @@
 @require './scenes/presents/styles';
 
 text_color_red = #d43e2c;
+error_color = #dc3545;
+success_color = #18bc9c;
 
 img {
     max-height: 100%;
@@ -12,10 +14,14 @@ img {
 }
 
 .error
-    outline: 2px solid #dc3545 !important;
+    color: error_color !important;
+.error-border
+    outline: 2px solid error_color !important;
 
 .success
-    outline: 2px solid #18bc9c !important;
+    color: success_color !important;
+.success-border
+    outline: 2px solid success_color !important;
 
 .re-page
     height: 100%;
@@ -145,6 +151,24 @@ img {
 
         &._bottom-padding
             padding-bottom: 35px;
+
+    &__modal-info
+        position: absolute;
+        left: 38%;
+        top: 50%;
+        margin-top: -232px;
+        background: url(./image/info.png) center center no-repeat;
+        background-size: contain;
+        width: 450px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: #d43e2c;
+        font-size: 22px;
+        padding: 0 45px;
+        user-select: none;
 
 .re-scene
     height: 100%;
