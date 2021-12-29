@@ -101,16 +101,18 @@
                 <div class="re-gift" id="gift__second">
                     <div class="re-gift__content" style="margin-right: 180px;">
                         <div class="re-gift__preview-person" style="margin-right: -160px;">
-                            <img class="re-scene__ghost-image" src="./images/scene-preview/terminator.png" alt="">
+                            <img class="re-scene__ghost-image" src="./images/person/terminator/hi.png" alt="">
                         </div>
                         <div class="re-gift__content-wrapper">
-                            <div class="re-gift__cloud">
+                            <div class="re-message__cloud _bottom-padding">
                                 -Тензоровец, привет! <br/><br/>
-                                Только ты мне сможешь помочь и только ты в силах исправить
-                                то, что произошло. Мне нужно найти Джона Коннора и помочь
-                                ему уничтожить Скайнет. Но что-то случилось с временной шкалой
-                                и я не могу его найти. Мне нужна твоя помощь, чтобы найти 2
-                                подсказку или предсказание, где он может быть.<br/><br/>
+                                Только ты мне сможешь помочь и только ты в силах <br/>
+                                исправить то, что произошло. Мне нужно найти <br/>
+                                Джона Коннора и помочь ему уничтожить Скайнет. <br/>
+                                Но что-то случилось с временной шкалой <br/>
+                                и я не могу его найти. Мне нужна твоя помощь, <br/>
+                                чтобы найти 2 подсказку или предсказание, <br/>
+                                где он может быть.<br/><br/>
 
                                 Пройди испытание и получи предсказание!
                             </div>
@@ -153,12 +155,18 @@
                 <div class="re-scene__content _align-center">
                     <div class="re-scene__content-wrapper" id="past_preview">
                         <div class="re-scene__ghost">
-                            <div class="re-scene__ghost-message">
-                                <div class="re-message _modern _past _blue">
-                                    <div class="re-gift__cloud">
+                            <img
+                                class="re-scene__ghost-image"
+                                src="./images/person/terminator/lets_rock_n_roll.png"
+                                style="margin-top: 60%; margin-left:-65%; max-height: 450px;"
+                                alt=""
+                            />
+                            <div class="re-scene__ghost-message" style="margin-top: 75%;">
+                                <div class="re-message__cloud" style="width: 480px; height: 255px;">
+                                    <div class="re-message__cloud-text">
                                         Ну что,<br/> ты готов к приключениям?
                                     </div>
-                                    <div class="re-message__action">
+                                    <div class="re-message__action _cloud-corner">
                                         <a
                                             id="past_trigger"
                                             class="re-action _modern"
@@ -243,26 +251,24 @@
                         <div class="re-scene__ghost">
                             <img
                                 class="re-scene__ghost-image"
-                                src="./images/person/preview.png"
+                                style="margin-left: 8%;"
+                                src="./images/person/terminator/low_battery.png"
                                 alt=""
                             />
                             <div class="re-scene__ghost-message">
-                                <div class="re-message _present _orange _modern">
-                                    <div class="re-message__text">
-                                        Записать ребенка на онлайн-кружок, не забыть про срочную задачу на удалёнке, взять маску перед выходом на улицу.<br/>
-                                        Вымыть руки не один раз, а двадцать один!<br/>
-                                        Как много всего нужно запомнить, особенно в удивительном 2020!<br/>
-                                        Проверим твою память.
-                                    </div>
+                                <div class="re-message__cloud" style="width: 560px; height: 310px;">
+                                    Если Джон и есть здесь, то мне просто так до него не добраться – нужно<br/>
+                                    решить ребусы. Помоги мне пройти этот этап, иначе на счету каждая секунда.
+
                                     <div class="re-message__action">
                                         <a
                                             id="present_trigger"
                                             class="re-action _modern _red"
                                             href="#"
                                         >
-                                            <span data-vzhuh class="re-action__text"
-                                                >Вжух!</span
-                                            >
+                                        <span data-vzhuh class="re-action__text"
+                                        >Вжух!</span
+                                        >
                                         </a>
                                     </div>
                                 </div>
@@ -271,205 +277,26 @@
                     </div>
                     <div class="re-scene__game-wrapper _matches re-hidden" id="present_game-field">
                         <div class="re-scene__game _fill">
-                            <div class="re-game">
-                                <div class="re-game__title _present">
-                                    Найди одинаковые картинки.
+                            <div class="re-game__container _present">
+                                <div class="re-game__Riddles-row">
+                                    <img src="./images/scene-present/riddles/first.png" alt="first"/>
+                                    <div class="re-game__Riddles-answer">
+                                        <input type="text" class="re-game__Riddles-input" id="riddles-first-input" />
+                                        <button class="re-game__Riddles-submit" id="riddles-first">Try me!</button>
+                                    </div>
                                 </div>
-                                <div class="re-game__field">
-                                    <div class="re-game__field-main">
-                                        <section class="memory-game">
-                                            <div class="memory-card" data-name="react">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/studious2.png"
-                                                        alt="React"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="react">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/studious2.png"
-                                                        alt="React"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="angular">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/champion.png"
-                                                        alt="Angular"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="angular">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/champion.png"
-                                                        alt="Angular"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="ember">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/ambitious.png"
-                                                        alt="Ember"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="ember">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/ambitious.png"
-                                                        alt="Ember"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="vue">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/11_knight.png"
-                                                        alt="Vue"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="vue">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/11_knight.png"
-                                                        alt="Vue"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="backbone">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/fast6.png"
-                                                        alt="Backbone"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="backbone">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/fast6.png"
-                                                        alt="Backbone"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="aurelia">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/superman2.png"
-                                                        alt="Aurelia"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="memory-card" data-name="aurelia">
-                                                <div class="front-face">
-                                                    <img
-                                                        src="./images/scene-present/superman2.png"
-                                                        alt="Aurelia"
-                                                    />
-                                                </div>
-                                                <div class="back-face">
-                                                    <img
-                                                        class="back-face-img"
-                                                        src="./images/scene-present/js-baddge.png"
-                                                        alt="Memory Card"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </section>
+                                <div class="re-game__Riddles-row">
+                                    <img src="./images/scene-present/riddles/second.png" alt="second"/>
+                                    <div class="re-game__Riddles-answer">
+                                        <input type="text" class="re-game__Riddles-input" id="riddles-second-input"/>
+                                        <button class="re-game__Riddles-submit" id="riddles-second">Try me!</button>
+                                    </div>
+                                </div>
+                                <div class="re-game__Riddles-row">
+                                    <img src="./images/scene-present/riddles/third.png" alt="third" />
+                                    <div class="re-game__Riddles-answer">
+                                        <input type="text" class="re-game__Riddles-input" id="riddles-third-input" />
+                                        <button class="re-game__Riddles-submit" id="riddles-third">Try me!</button>
                                     </div>
                                 </div>
                             </div>
@@ -479,13 +306,13 @@
                         <div class="re-scene__ghost">
                             <img
                                 class="re-scene__ghost-image"
-                                src="./images/person/well.png"
+                                src="./images/person/terminator/oh_boy.png"
                             />
-                            <div class="re-scene__ghost-message">
-                                <div class="re-message _present _modern _orange" style="top: -50px;">
-                                    <div class="re-message__text">
-                                        Отлично! Держим курс на будущее?
-                                    </div>
+                            <div class="re-scene__ghost-message" style="margin-top: 7%; margin-left: -5%">
+                                <div class="re-message__cloud" style="width: 535px; height: 310px;">
+                                    Ураа! Ты помог мне! Но Джона здесь тоже нет..<br/>
+                                    Предлагаю отправиться в будущее. Ты готов к следующему путешествию?
+
                                     <div class="re-message__action _modern _orange">
                                         <a
                                             id="present_run-next"
@@ -507,62 +334,49 @@
                         <div class="re-scene__ghost" style="margin-left: 0;" id="future_preview">
                             <img
                                 class="re-scene__ghost-image"
-                                src="./images/person/hey.png"
+                                src="./images/person/terminator/broken_glasses.png"
                                 alt=""
                             />
                             <div class="re-scene__ghost-message">
-                                <div class="re-message _modern _aqua _future">
-                                    <div class="re-message__text">
-                                        Достижение любой цели начинается с выбора стратегии!<br/>
-                                        Ну что, попробуем обыграть 2021?
-                                    </div>
+                                <div class="re-message__cloud" style="width: 580px">
+                                    И снова испытание... даже будущем не так просто найти Джона. <br/>
+                                    Но я должен пройти! Иначе Скайнет захватит всю планету и я не смогу никого спасти.
+
                                     <div class="re-message__action">
                                         <a
                                             id="future_trigger"
                                             class="re-action  _modern _orange"
                                             href="#"
                                         >
-                                            <span data-vzhuh class="re-action__text">Вжух!</span
-                                            >
+                                        <span data-vzhuh class="re-action__text">Вжух!</span
+                                        >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="re-scene__game-wrapper re-hidden"
-                        id="future_game-field"
-                    >
-                        <div class="re-scene__game-canvas">
-                            <div class="re-game">
-                                <div class="re-game__title _future">
-                                    Сыграй в  классическую игру "Крестики-нолики". Первый ход твой.
-                                </div>
-                                <div class="re-game__field _column-direction">
-                                    <table id="game__board" class="game__board"></table>
-                                    <div class="re-game__meta-board" id="game__board-meta">
-                                        Твой ход, обыграй 2021!
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="re-scene__game-wrapper re-hidden" id="future_game-field" style="flex-direction: column;">
+                        <div class="re-game__title _future">
+                            Найди ёлку, которая значительно отличается от других
                         </div>
+                        <div class="re-game__root"></div>
                     </div>
                     <div
                         class="re-scene__content-wrapper re-hidden"
                         id="future_finish"
                     >
-                        <div class="re-scene__ghost">
+                        <div class="re-scene__ghost" style="margin-left: 0;">
                             <img
                                 class="re-scene__ghost-image"
-                                src="./images/person/best.png"
+                                style="margin-bottom: 25%;"
+                                src="./images/person/terminator/thumb_up.png"
                                 alt=""
                             />
-                            <div class="re-scene__ghost-message">
-                                <div class="re-message _modern _aqua _future">
-                                    <div class="re-message__text">
-                                        Ты прошёл все новогодние задания и вот-вот узнаешь, что тебя ждет в 2021 году!
-                                    </div>
+                            <div class="re-scene__ghost-message" style="margin-top: 45%;">
+                                <div class="re-message__cloud" style="width:480px; height: 260px;">
+                                    Ты прошёл все новогодние задания и вот-вот узнаешь, что тебя ждет в 2022 году!
+
                                     <div class="re-message__action">
                                         <a
                                             id="future_run-next"
@@ -570,7 +384,7 @@
                                             href="#"
                                         >
                                             <span data-vzhuh class="re-action__text"
-                                                >Вжух!</span
+                                            >Вжух!</span
                                             >
                                         </a>
                                     </div>

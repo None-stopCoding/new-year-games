@@ -11,6 +11,12 @@ img {
     max-width: 100%;
 }
 
+.error
+    outline: 2px solid #dc3545 !important;
+
+.success
+    outline: 2px solid #18bc9c !important;
+
 .re-page
     height: 100%;
     overflow: hidden;
@@ -118,8 +124,27 @@ img {
         font-size: 32px;
 
     &__action
-        padding-top: 20px;
+        padding-top: 50px;
+        align-self: flex-end;
         text-align: right;
+
+    &__cloud
+        margin-top: -232px;
+        background: url(./image/cloud.png) center center no-repeat;
+        background-size: contain;
+        width: 630px;
+        height: 405px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: #d43e2c;
+        font-size: 22px;
+        padding: 0 75px;
+        user-select: none;
+
+        &._bottom-padding
+            padding-bottom: 35px;
 
 .re-scene
     height: 100%;
@@ -145,6 +170,10 @@ img {
 
     &._future
         background: url('./image/future.png');
+        background-size: 100% 100%;
+
+    &._gifts
+        background: url('./image/christmas.jpg');
         background-size: 100% 100%;
 
     &__header
@@ -352,6 +381,48 @@ img {
         background: #ffb01f6b;
         padding: 30px;
         font-size: 32px;
+
+    &__container
+        &._present
+            width: 55vw;
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            padding: 25px;
+            background: rgba(173,216,230, 0.9);
+            border-radius: 20px;
+
+    &__Riddles
+        &-row
+            display: flex;
+            margin: 15px 0;
+        &-answer
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        &-input
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 10px;
+            outline: 1px solid #eee;
+            transition: .3s border-color;
+            height: 45px;
+            width: 300px;
+
+            &:hover, &:focus
+                outline: 3px solid #aaa;
+
+        &-submit
+            margin-left: 10px;
+            height: 45px;
+            border-radius: 5px;
+            background: #ffe5b4;
 
 .re-toggler
     color: #fff;

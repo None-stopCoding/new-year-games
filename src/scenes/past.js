@@ -11,9 +11,10 @@ init({
     stateChangedCallback: stateChanged,
 });
 
-getElementById("past_trigger").addEventListener("click", initHandler);
+// getElementById("past_trigger").addEventListener("click", initHandler);
 
-getElementById("past_run-next").addEventListener("click", runNextHandler);
+// getElementById("past_run-next").addEventListener("click", runNextHandler);
+getElementById("past_trigger").addEventListener("click", runNextHandler);
 
 /**
  *
