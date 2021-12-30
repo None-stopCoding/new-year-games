@@ -191,6 +191,8 @@ define("scripts/game.js", function(exports){
 
 	var snd;
 	var boomSnd;
+    var upsSnd;
+    var gameOverSnd;
 
 	// fruit barbette
 	var barbette = function(){
@@ -210,6 +212,8 @@ define("scripts/game.js", function(exports){
 	exports.start = function(){
 	    snd = sound.create( "audio/throw" );
 	    boomSnd = sound.create( "audio/boom" );
+	    upsSnd = sound.create( "audio/ups" );
+        gameOverSnd = sound.create( "audio/over" );
 	    timeline.setTimeout(function(){
 	        state( "game-state" ).set( "playing" );
 	        gameInterval = timeline.setInterval( barbette, 1e3 );
@@ -221,6 +225,7 @@ define("scripts/game.js", function(exports){
 	    gameInterval.stop();
 
 	    gameOver.show();
+        gameOverSnd.play();
 	    timeline.setTimeout(function(){
 	        // sence.switchSence( "home-menu" );
 	        // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
@@ -290,6 +295,7 @@ define("scripts/game.js", function(exports){
 
 	    // if( fruit.type != "boom" )
         lose.showLoseAt( fruit.originX );
+        upsSnd.play();
 	});
 
 	message.addEventListener("game.over", function(){
@@ -601,6 +607,10 @@ define("scripts/sence.js", function(exports){
 	    else if( curSence.is( "quit-body" ) ) this.hideQuit( onHide );
 	};
 
+    exports.stopMenuSnd = function(){
+        menuSnd.stop();
+    }
+
 	// to enter home page menu
 	exports.showMenu = function( callback ){
 	    var callee = arguments.callee;
@@ -696,6 +706,10 @@ define("scripts/sence.js", function(exports){
 	message.addEventListener("sence.switchSence", function( name ){
 	    exports.switchSence( name );
 	});;
+
+    message.addEventListener("sence.stopMenuSnd", function(){
+        exports.stopMenuSnd();
+    });;
 
 	return exports;
 });
@@ -1224,7 +1238,7 @@ define("scripts/factory/fruit.js", function(exports){
 
 		// if( this.type !== "boom" )
 			flash.showAt( this.originX, this.originY, angle ),
-			// juice.create( this.originX, this.originY, infos[ this.type ][6] ),
+			juice.create( this.originX, this.originY, infos[ this.type ][6] ),
 		    // this.apart( angle );
 		// else
 			this.hide();
@@ -2547,7 +2561,7 @@ define("scripts/lib/sound.js", function(exports){
 
 	ClassBuzz.prototype.play = function(){
 		this.sound.setPercent( 0 );
-		this.sound.setVolume( 100 );
+		this.sound.setVolume( 10 );
 		this.sound.play();
 	};
 
@@ -4156,7 +4170,7 @@ define("scripts/object/flash.js", function(exports){
 
 	exports.set = switchOn ? function(){
 		image = layer.createImage( "flash", "images/bang.png", 0, 0, 150, 150 ).hide();
-		snd = sound.create( "audio/splatter" );
+		snd = sound.create( "audio/boom" );
 	} : Ucren.nul;
 
 	exports.showAt = switchOn ? function( x, y, an ){

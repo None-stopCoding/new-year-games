@@ -17,7 +17,6 @@ getElementById('present_run-next').addEventListener('click', runNextHandler);
 document.querySelectorAll('.re-game__Riddles-input').forEach(function(component) {
     component.addEventListener('mousedown', function(event) {
         event.target.focus();
-        console.log(event.target);
     })
 })
 
