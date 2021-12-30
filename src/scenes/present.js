@@ -38,6 +38,19 @@ function initHandler() {
             checkValue(key);
         });
     });
+
+    getElementById('re-game__Riddles-help-second').addEventListener('click', function(event) {
+        let isClicked = event.target.attributes.clicked.value === 'clicked';
+        let helpContainer = $('#re-game__Riddles-help-second');
+
+        if (isClicked) {
+            helpContainer.html('на в а');
+            helpContainer.addClass('inactiveLink');
+        } else {
+            helpContainer.html('Может не надо...? :(');
+            event.target.attributes.clicked.value = 'clicked';
+        }
+    });
 }
 
 function checkValue(riddle) {

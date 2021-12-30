@@ -13,6 +13,11 @@ img {
     max-width: 100%;
 }
 
+.inactiveLink
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+
 .error
     color: error_color !important;
 .error-border
@@ -428,6 +433,10 @@ img {
             flex: 1;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
+        &-answerContainer
+            display: flex;
+            justify-content: center;
             align-items: center;
         &-input
             display: block;
