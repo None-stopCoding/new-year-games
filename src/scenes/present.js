@@ -23,16 +23,16 @@ document.querySelectorAll('.re-game__Riddles-input').forEach(function(component)
 
 function isGameEndedCallback() {
     setTimeout(function() {
-        $('#present_finish').removeClass('re-hidden');
-        $('#present_game-field').addClass('re-hidden').fadeOut().delay(300);
+        $('#present_finish').fadeIn(700).removeClass('re-hidden');
+        $('#present_game-field').fadeOut(1200).addClass('re-hidden');
     }, 700);
 }
 
 function initHandler() {
     // init({ stateChangedCallback: isGameEndedCallback });
-    $('#present_preview').fadeOut().delay(1000).addClass('re-hidden');
+    $('#present_preview').fadeOut(1000).addClass('re-hidden');
     // isGameEndedCallback();
-    $('#present_game-field').removeClass('re-hidden').fadeIn();
+    $('#present_game-field').fadeIn(800).removeClass('re-hidden');
 
     ['first', 'second', 'third'].forEach(function(key) {
         getElementById('riddles-' + key).addEventListener('click', function() {

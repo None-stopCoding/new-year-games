@@ -37,15 +37,15 @@ let game;
 
 function initHandler() {
     // game = newGame({ stateChanged });
-    $("#future_preview").fadeOut().delay(1000).addClass("re-hidden");
-    $("#future_game-field").removeClass("re-hidden").fadeIn();
+    $("#future_preview").fadeOut(1000).addClass("re-hidden");
+    $("#future_game-field").fadeIn(800).removeClass("re-hidden");
     showTrees($('#future_game-field .re-game__root'), gameFinished);
 }
 
 function gameFinished() {
     setTimeout(function() {
-        $("#future_game-field").addClass("re-hidden").fadeOut().delay(1000);
-        $("#future_finish").removeClass("re-hidden").fadeIn().delay(1300);
+        $("#future_game-field").fadeOut(1200).addClass("re-hidden");
+        $("#future_finish").fadeIn(800).removeClass("re-hidden");
         $("#future .re-scene__content").removeClass("_align-end").addClass("_align-center");
     }, 1000);
 }

@@ -30,7 +30,7 @@ function stateChanged(isEnd) {
 
 function initHandler() {
     $("#past_preview").fadeOut().delay(1000).addClass("re-hidden");
-    $("#past_game-field").removeClass("re-hidden").fadeIn();
+    $("#past_game-field").removeClass("re-hidden");
     startModule("scripts/main", stateChanged);
 }
 

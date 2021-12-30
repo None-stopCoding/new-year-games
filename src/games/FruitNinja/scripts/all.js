@@ -221,11 +221,13 @@ define("scripts/game.js", function(exports){
 	    gameInterval.stop();
 
 	    gameOver.show();
-	    // timeline.setTimeout(function(){
-	    //     // sence.switchSence( "home-menu" );
-	    //     // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
-	    //     message.postMessage( "home-menu", "sence.switchSence" );
-	    // }, 2000);
+	    timeline.setTimeout(function(){
+	        // sence.switchSence( "home-menu" );
+	        // TODO: require 出现互相引用时，造成死循环，这个问题需要跟进，这里暂时用 postMessage 代替
+            state( "click-enable" ).off();
+            gameOver.hide();
+	        message.postMessage( "home-menu", "sence.switchSence" );
+	    }, 1500);
 
 	    scoreNumber = 0;
 	    volleyNum = 2;
@@ -251,7 +253,7 @@ define("scripts/game.js", function(exports){
         score.number( ++ scoreNumber );
         this.applyScore( scoreNumber );
 
-        if (scoreNumber === 5) {
+        if (scoreNumber === 20) {
             message.postMessage( "game.over" );
             finishedCallback();
         }
@@ -558,7 +560,8 @@ define("scripts/sence.js", function(exports){
 	exports.init = function(){
 	    menuSnd = sound.create( "audio/menu" );
 	    gameStartSnd = sound.create( "audio/start" );
-		[ background, homeMask, logo, ninja, homeDesc, dojo, newSign, newGame, quit, score, lose, developing, gameOver, flash, fps ].invoke( "set" );
+		// [ background, homeMask, logo, ninja, homeDesc, dojo, newSign, newGame, quit, score, lose, developing, gameOver, flash, fps ].invoke( "set" );
+        [ background, homeMask, homeDesc, dojo, newGame, quit, score, lose, developing, gameOver, flash, fps ].invoke( "set" );
 	    setInterval( fps.update.bind( fps ), 500 );
 	};
 
@@ -603,33 +606,33 @@ define("scripts/sence.js", function(exports){
 	    var callee = arguments.callee;
 	    var times = callee.times = ++ callee.times || 1;
 
-	    peach = fruit.create( "peach", 137, 333, true );
-	    sandia = fruit.create( "sandia", 330, 322, true );
-	    boom = fruit.create( "boom", 552, 367, true, 2500 );
+	    // peach = fruit.create( "peach", 137, 333, true );
+	    // sandia = fruit.create( "sandia", 330, 322, true );
+	    // boom = fruit.create( "boom", 552, 367, true, 2500 );
+	    boom = fruit.create( "boom", 335, 320, true, 2500 );
 
-	    [ peach, sandia, boom ].forEach(function( f ){ f.isHomeMenu = 1; });
-	    peach.isDojoIcon = sandia.isNewGameIcon = boom.isQuitIcon = 1;
+	    // [ peach, sandia, boom ].forEach(function( f ){ f.isHomeMenu = 1; });
+	    // peach.isDojoIcon = sandia.isNewGameIcon = boom.isQuitIcon = 1;
+        boom.isHomeMenu = 1;
+	    boom.isNewGameIcon = 1;
 
 	    var group = [
 	    	[ homeMask, 0 ],
-	    	[ logo, 0 ],
-
-	    	[ ninja, 500 ],
 	    	[ homeDesc, 1500 ],
 
-	    	[ dojo, 2000 ],
+	    	// [ dojo, 2000 ],
 	    	[ newGame, 2000 ],
-	    	[ quit, 2000 ],
+	    	// [ quit, 2000 ],
 
-	        [ newSign, 2000 ],
+	        // [ newSign, 2000 ],
 
-	        [ peach, 2000 ],
-	        [ sandia, 2000 ],
+	        // [ peach, 2000 ],
+	        // [ sandia, 2000 ],
 	        [ boom, 2000 ]
 	    ];
 
 	    group.invoke( "show" );
-	    [ peach, sandia ].invoke( "rotate", 2500 );
+	    // [ peach, sandia ].invoke( "rotate", 2500 );
 
 	    menuSnd.play();
 	    setTimeout( callback, 2500 );
@@ -637,9 +640,11 @@ define("scripts/sence.js", function(exports){
 
 	// to exit home page menu
 	exports.hideMenu = function( callback ){
-	    [ newSign, dojo, newGame, quit ].invoke( "hide" );
-	    [ homeMask, logo, ninja, homeDesc ].invoke( "hide" );
-	    [ peach, sandia, boom ].invoke( "fallOff", 150 );
+	    // [ newSign, dojo, newGame, quit ].invoke( "hide" );
+	    [ newGame ].invoke( "hide" );
+	    [ homeMask, homeDesc ].invoke( "hide" );
+	    // [ peach, sandia, boom ].invoke( "fallOff", 150 );
+	    [ boom ].invoke( "fallOff", 150 );
 
 	    menuSnd.stop();
 	    setTimeout( callback, fruit.getDropTimeSetting() );
@@ -1217,11 +1222,11 @@ define("scripts/factory/fruit.js", function(exports){
 		if( ( index = fruitCache.indexOf( this ) ) > -1 )
 		    fruitCache.splice( index, 1 );
 
-		if( this.type !== "boom" )
+		// if( this.type !== "boom" )
 			flash.showAt( this.originX, this.originY, angle ),
-			juice.create( this.originX, this.originY, infos[ this.type ][6] ),
-		    this.apart( angle );
-		else
+			// juice.create( this.originX, this.originY, infos[ this.type ][6] ),
+		    // this.apart( angle );
+		// else
 			this.hide();
 	};
 
@@ -3320,8 +3325,8 @@ define("scripts/lib/ucren.js", function(exports){
 					coors[0] = thisTouch.clientX;
 					coors[1] = thisTouch.clientY;
 				}else{ 								// all others
-					coors[0] = e.clientX + 50;
-					coors[1] = e.clientY + 50;
+					coors[0] = e.clientX;
+					coors[1] = e.clientY - 50;
 				}
 				return coors;
 			},
@@ -4142,7 +4147,7 @@ define("scripts/object/flash.js", function(exports){
 
 	var anim = tween.quadratic.cio;
 	var anims = [];
-	var dur = 100;
+	var dur = 150;
 
 	var switchOn = true;
 
@@ -4150,7 +4155,7 @@ define("scripts/object/flash.js", function(exports){
 	// 	switchOn = false;
 
 	exports.set = switchOn ? function(){
-		image = layer.createImage( "flash", "images/flash.png", 0, 0, 358, 20 ).hide();
+		image = layer.createImage( "flash", "images/bang.png", 0, 0, 150, 150 ).hide();
 		snd = sound.create( "audio/splatter" );
 	} : Ucren.nul;
 
